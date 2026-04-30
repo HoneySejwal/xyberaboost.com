@@ -70,8 +70,7 @@
                                 $photo = explode(',', $cart->product['photo']);
                                 $product_detail = App\Models\Product::getProductBySlug($cart->product->slug);
                                 $m = Helper::getProductPriceByCurrency(session('currency'), $cart->product);
-                                $a = $cart['price'] - $product_detail->price;
-                                $hours = $a / 20;
+                                $hours = max(0, (int) ($cart->hours ?? 0));
                                 $basic = $product_detail->price;
                                 $perhour = 20;
                             @endphp
