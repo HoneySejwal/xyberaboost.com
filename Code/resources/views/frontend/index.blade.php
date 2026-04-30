@@ -13,73 +13,32 @@
 <main class="pb-24">
     <section class="home-hero section-shell">
         <div class="page-container">
-            <div class="hud-shell">
-                <div class="hud-grid-lines"></div>
+            <div class="cinematic-hero">
+                <div class="cinematic-hero-bg">
+                    @if($heroCategory && !empty($heroCategory->photo))
+                        <img src="{{ url($heroCategory->photo) }}" alt="{{ $heroCategory->title }}" class="cinematic-hero-image">
+                    @endif
+                </div>
+                <div class="cinematic-hero-overlay"></div>
+                <div class="cinematic-hero-grid"></div>
+                <div class="cinematic-hero-ring"></div>
 
-                <div class="hero-command-strip">
-                    <div class="eyebrow-chip">{{ __('common.stitch_hero_chip') }}</div>
-                    <div class="hero-status-line">
+                <div class="cinematic-hero-content">
+                    <p class="cinematic-overline">{{ __('common.stitch_hero_chip') }}</p>
+                    <h1 class="cinematic-title">{{ __('common.stitch_hero_title') }}</h1>
+                    <p class="cinematic-copy">{{ __('common.stitch_hero_text') }}</p>
+
+                    <div class="hero-cta-row">
+                        <a href="{{ route('product-lists') }}" class="hud-btn hud-btn-primary">{{ __('common.purchase_services') }}</a>
+                        <a href="{{ route('register.form') }}" class="hud-btn hud-btn-secondary">{{ __('common.join_us_today') }}</a>
+                    </div>
+
+                    <p class="system-note">Purchased points can only be used on this website.</p>
+
+                    <div class="cinematic-status-line">
                         <span>{{ __('common.stitch_status_categories') }} {{ collect($category_lists)->count() }}</span>
                         <span>{{ __('common.stitch_status_currency') }} {{ session('currency', 'USD') }}</span>
                         <span>{{ __('common.stitch_status_locale') }} {{ app()->getLocale() === 'ja' ? __('common.japanese') : __('common.english') }}</span>
-                    </div>
-                </div>
-
-                <div class="hero-layout">
-                    <div class="hero-copy-panel">
-                        <p class="section-kicker">{{ __('common.stitch_hero_kicker') }}</p>
-                        <h1 class="display-title">{{ __('common.stitch_hero_title') }}</h1>
-                        <p class="lead-copy">{{ __('common.stitch_hero_text') }}</p>
-
-                        <div class="hero-cta-row">
-                            <a href="{{ route('product-lists') }}" class="hud-btn hud-btn-primary">{{ __('common.purchase_services') }}</a>
-                            <a href="{{ route('register.form') }}" class="hud-btn hud-btn-secondary">{{ __('common.join_us_today') }}</a>
-                        </div>
-
-                        <p class="system-note">Purchased points can only be used on this website.</p>
-
-                        <div class="hero-metric-grid">
-                            <div class="hud-stat">
-                                <span class="hud-stat-value">{{ collect($category_lists)->count() }}+</span>
-                                <span class="hud-stat-label">{{ __('common.metric_categories') }}</span>
-                            </div>
-                            <div class="hud-stat">
-                                <span class="hud-stat-value">200+</span>
-                                <span class="hud-stat-label">{{ __('common.metric_services') }}</span>
-                            </div>
-                            <div class="hud-stat">
-                                <span class="hud-stat-value">24/7</span>
-                                <span class="hud-stat-label">{{ __('common.metric_support') }}</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hero-visual-stack">
-                        <div class="hero-media-frame">
-                            @if($heroCategory && !empty($heroCategory->photo))
-                                <img src="{{ url($heroCategory->photo) }}" alt="{{ $heroCategory->title }}" class="hero-media-image">
-                            @else
-                                <div class="hero-media-fallback">
-                                    <span>ELG</span>
-                                </div>
-                            @endif
-                            <div class="hero-media-glow"></div>
-                        </div>
-
-                        @if($heroCategory)
-                            <article class="hero-spotlight-card">
-                                <div class="hero-spotlight-head">
-                                    <p class="section-kicker">{{ __('common.collection_title') }}</p>
-                                    <span class="hero-spotlight-tag">{{ __('common.spotlight_label') }}</span>
-                                </div>
-                                <h2>{{ $heroCategory->title }}</h2>
-                                <p>{{ \Illuminate\Support\Str::limit(strip_tags($heroCategory->summary), 170) }}</p>
-                                <div class="hero-spotlight-meta">
-                                    <span>{{ __('common.stitch_spotlight_meta') }}</span>
-                                    <a href="{{ route('product-cat', $heroCategory->slug) }}" class="hud-inline-link">{{ __('common.explore_game') }}</a>
-                                </div>
-                            </article>
-                        @endif
                     </div>
                 </div>
             </div>
