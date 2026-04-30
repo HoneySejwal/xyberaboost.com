@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GAMICIA // CONTACT THE SANCTUM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(28, 27, 27, 0.4);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glow-orange {
+            box-shadow: 0 0 20px rgba(255, 87, 26, 0.2);
+        }
+        .rim-light {
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#1c1b1b",
+                      "error-container": "#93000a",
+                      "surface-container-high": "#2a2a2a",
+                      "surface-container-highest": "#353534",
+                      "on-tertiary-container": "#2a2a2a",
+                      "background": "#131313",
+                      "on-secondary-container": "#613100",
+                      "inverse-primary": "#ae3200",
+                      "surface-bright": "#3a3939",
+                      "on-primary": "#5e1700",
+                      "primary": "#ffb59e",
+                      "on-secondary": "#4e2600",
+                      "on-primary-fixed-variant": "#852400",
+                      "on-surface-variant": "#e6beb2",
+                      "on-error": "#690005",
+                      "on-primary-container": "#521300",
+                      "secondary-fixed": "#ffdcc4",
+                      "secondary": "#ffb77f",
+                      "inverse-on-surface": "#313030",
+                      "secondary-fixed-dim": "#ffb77f",
+                      "on-tertiary": "#313030",
+                      "on-error-container": "#ffdad6",
+                      "primary-fixed": "#ffdbd0",
+                      "on-background": "#e5e2e1",
+                      "on-tertiary-fixed-variant": "#474746",
+                      "surface-dim": "#131313",
+                      "primary-fixed-dim": "#ffb59e",
+                      "primary-container": "#ff571a",
+                      "inverse-surface": "#e5e2e1",
+                      "on-secondary-fixed": "#2f1500",
+                      "secondary-container": "#ff8a00",
+                      "surface-container": "#201f1f",
+                      "surface-tint": "#ffb59e",
+                      "on-secondary-fixed-variant": "#6f3900",
+                      "surface-variant": "#353534",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "outline-variant": "#5c4037",
+                      "outline": "#ad897e",
+                      "on-primary-fixed": "#3a0b00",
+                      "tertiary": "#c8c6c5",
+                      "tertiary-fixed": "#e5e2e1",
+                      "surface": "#131313",
+                      "error": "#ffb4ab",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "on-surface": "#e5e2e1",
+                      "tertiary-container": "#929090",
+                      "surface-container-lowest": "#0e0e0e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-md": "32px",
+                      "margin-page": "64px",
+                      "gutter": "24px",
+                      "stack-lg": "64px",
+                      "stack-sm": "16px",
+                      "container-max": "1440px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "label-caps": ["Space Grotesk"],
+                      "headline-md": ["Space Grotesk"],
+                      "display-xl": ["Space Grotesk"],
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Space Grotesk"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "label-caps": ["14px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="font-body-md text-on-background selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-zinc-950/60 backdrop-blur-xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] before:absolute before:inset-0 before:border-t before:border-white/20">
+<div class="flex justify-between items-center px-12 py-6 max-w-[1440px] mx-auto">
+<div class="text-2xl font-black italic text-orange-600 tracking-tighter font-headline-lg uppercase">
+                GAMICIA
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-caps uppercase text-sm text-zinc-400 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,77,0,0.8)] transition-all active:scale-95 duration-200" href="#">Games</a>
+<a class="font-label-caps uppercase text-sm text-zinc-400 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,77,0,0.8)] transition-all active:scale-95 duration-200" href="#">News</a>
+<a class="font-label-caps uppercase text-sm text-zinc-400 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,77,0,0.8)] transition-all active:scale-95 duration-200" href="#">Features</a>
+<a class="font-label-caps uppercase text-sm text-zinc-400 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,77,0,0.8)] transition-all active:scale-95 duration-200" href="#">Shop</a>
+<a class="font-label-caps uppercase text-sm text-zinc-400 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,77,0,0.8)] transition-all active:scale-95 duration-200" href="#">About</a>
+<a class="font-label-caps uppercase text-sm text-orange-500 border-b-2 border-orange-600 pb-1 hover:text-white hover:drop-shadow-[0_0_8px_rgba(255,77,0,0.8)] transition-all active:scale-95 duration-200" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-zinc-400 hover:text-white">search</button>
+<button class="bg-primary-container text-white font-label-caps px-8 py-3 rounded-none active:scale-95 duration-200 shadow-[0_0_20px_rgba(255,87,26,0.4)]">
+                    Login
+                </button>
+</div>
+</div>
+</nav>
+<main class="relative pt-32">
+<!-- Hero Section -->
+<section class="relative h-[614px] flex items-center overflow-hidden px-12">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-40 mix-blend-luminosity" data-alt="Cinematic wide shot of a dark cyberpunk city alleyway at night with glowing orange neon signs and volumetric fog" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCucPh51RA7Z1kMo3Af7gwlDPUKrmPeDhVQSbkQbpf45Te_aqJdXwk7cIgG-rejIMcgdWALb0LLP0eItGXON8ZicZviY18_h4mrNV_k3ws2kxHDHOq_hsSQtXPU3rTHUv0-0IZTrRMpr_gpEA8Xw2PUqhwbYiu36mu3ieHW6rGbL2d2tlQF3AY_Am5hlp-ZluLVhMRO7oEPB7H_cIxIwFPDo8D7cPyGA-ZZe0Rq-8gl5ukgNeEbzEjXJQ1mEvWulRwEss_b3DAmanBY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-4xl">
+<p class="font-label-caps text-primary-container mb-4 tracking-[0.3em]">ESTABLISH UPLINK</p>
+<h1 class="font-display-xl text-white mb-6 uppercase">Stay Connected // <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">The Sanctum</span></h1>
+<p class="font-body-lg text-zinc-400 max-w-xl">Join the resistance. Whether you have intel on bugs, want to collaborate on new missions, or need technical support from the hub, our comms are open 24/7.</p>
+</div>
+<div class="absolute -right-20 top-1/2 -translate-y-1/2 opacity-10">
+<span class="font-display-xl text-[200px] leading-none select-none tracking-tighter">GAMICIA</span>
+</div>
+</section>
+<!-- Main Content Grid -->
+<section class="max-w-[1440px] mx-auto px-12 pb-32 grid grid-cols-12 gap-gutter relative">
+<!-- Background Glow -->
+<div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-container/10 rounded-full blur-[120px] -z-10"></div>
+<!-- Contact Form Panel -->
+<div class="col-span-12 lg:col-span-7 glass-panel p-12 relative overflow-hidden rim-light">
+<div class="absolute top-0 right-0 w-32 h-1 bg-gradient-to-l from-primary-container to-transparent"></div>
+<h2 class="font-headline-md text-white mb-10 uppercase flex items-center gap-4">
+<span class="w-8 h-[2px] bg-primary-container"></span>
+                    Terminal Input
+                </h2>
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="font-label-caps text-xs text-zinc-500 uppercase">Operator Name</label>
+<input class="w-full bg-zinc-900/50 border-0 border-b-2 border-zinc-800 focus:border-primary-container focus:ring-0 text-white placeholder:text-zinc-700 py-4 transition-all transition-duration-300" placeholder="GHOST_PROTOCOL" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-xs text-zinc-500 uppercase">Terminal Address</label>
+<input class="w-full bg-zinc-900/50 border-0 border-b-2 border-zinc-800 focus:border-primary-container focus:ring-0 text-white placeholder:text-zinc-700 py-4 transition-all transition-duration-300" placeholder="OPERATOR@NEOPRIME.COM" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-xs text-zinc-500 uppercase">Transmission Subject</label>
+<select class="w-full bg-zinc-900/50 border-0 border-b-2 border-zinc-800 focus:border-primary-container focus:ring-0 text-white py-4 transition-all">
+<option>GENERAL INQUIRY</option>
+<option>TECHNICAL ANOMALY</option>
+<option>RECRUITMENT REQUEST</option>
+<option>MEDIA / PRESS ACCESS</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-xs text-zinc-500 uppercase">Message Log</label>
+<textarea class="w-full bg-zinc-900/50 border-0 border-b-2 border-zinc-800 focus:border-primary-container focus:ring-0 text-white placeholder:text-zinc-700 py-4 transition-all resize-none" placeholder="TYPE YOUR MESSAGE HERE..." rows="6"></textarea>
+</div>
+<button class="w-full py-5 bg-gradient-to-r from-orange-600 to-red-700 text-white font-label-caps text-lg tracking-widest hover:brightness-110 active:scale-[0.98] transition-all shadow-[0_10px_30px_rgba(255,87,26,0.3)]" type="submit">
+                        INITIATE TRANSMISSION
+                    </button>
+</form>
+</div>
+<!-- Side Info Panel -->
+<div class="col-span-12 lg:col-span-5 flex flex-col gap-gutter">
+<!-- Location Card -->
+<div class="glass-panel p-8 rim-light">
+<h3 class="font-label-caps text-primary-container mb-6 text-sm">HUB LOCATION</h3>
+<div class="flex gap-6 items-start">
+<div class="w-16 h-16 bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-4xl">location_on</span>
+</div>
+<div>
+<p class="font-headline-md text-white text-xl mb-2">NEO-PRIME DISTRICT</p>
+<p class="text-zinc-400 font-body-md">Sector 7, High-Cloud Plaza<br/>The Citadel, Unit 404</p>
+</div>
+</div>
+</div>
+<!-- Support Hotline -->
+<div class="glass-panel p-8 rim-light">
+<h3 class="font-label-caps text-primary-container mb-6 text-sm">ENCRYPTED LINE</h3>
+<div class="flex gap-6 items-start">
+<div class="w-16 h-16 bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-4xl">podium</span>
+</div>
+<div>
+<p class="font-headline-md text-white text-xl mb-2">+00 888 24 7 999</p>
+<p class="text-zinc-400 font-body-md">24/7 Global Tactical Support<br/>Standard transmission rates apply</p>
+</div>
+</div>
+</div>
+<!-- Social Links -->
+<div class="glass-panel p-8 rim-light flex-grow">
+<h3 class="font-label-caps text-primary-container mb-8 text-sm">NETWORK NODES</h3>
+<div class="grid grid-cols-2 gap-4">
+<a class="group flex items-center gap-4 p-4 bg-zinc-900/50 hover:bg-zinc-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-zinc-500 group-hover:text-primary-container">alternate_email</span>
+<span class="font-label-caps text-xs">X-FEED</span>
+</a>
+<a class="group flex items-center gap-4 p-4 bg-zinc-900/50 hover:bg-zinc-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-zinc-500 group-hover:text-primary-container">play_circle</span>
+<span class="font-label-caps text-xs">COMM-VIDEO</span>
+</a>
+<a class="group flex items-center gap-4 p-4 bg-zinc-900/50 hover:bg-zinc-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-zinc-500 group-hover:text-primary-container">forum</span>
+<span class="font-label-caps text-xs">DISCORD_HUB</span>
+</a>
+<a class="group flex items-center gap-4 p-4 bg-zinc-900/50 hover:bg-zinc-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-zinc-500 group-hover:text-primary-container">hub</span>
+<span class="font-label-caps text-xs">MATRIX_NET</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Map Section -->
+<section class="w-full h-[400px] relative grayscale hover:grayscale-0 transition-all duration-700 border-y border-white/10 overflow-hidden">
+<div class="absolute inset-0 bg-primary-container/5 pointer-events-none z-10"></div>
+<img class="w-full h-full object-cover" data-alt="Monochromatic dark satellite map view of a complex urban layout with glowing grid lines" data-location="Tokyo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxN09Ts09cZ-93-nMdJogh5pXB1vBvk_QSYD8Eql0pL4OmAX3KbrNXveOih867nSIlUK4RRBN2kPK2_ZVp2VT4Dts2podM9rk2zWDQ9W9Qf2mGD2NLT2eo6Nwxbz7P_dbg5jat6PrTt_w1xjriOVno-wXI9904dBFkc7nRSv5vpC0cbUI1pQEZknvmTYgdn7rq4hYpBpsSzLZCz8aBLBYvjcKsWiFtgamSk0RULu7y9bQtjhhjwLx7a-6V-12bhhYWrJtWi_D7nix4"/>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+<div class="relative">
+<div class="absolute -inset-4 bg-primary-container/40 rounded-full blur-xl animate-pulse"></div>
+<span class="material-symbols-outlined text-primary-container text-6xl relative">target</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-12 bg-zinc-950 border-t border-orange-900/30 shadow-[0_-20px_50px_rgba(255,77,0,0.05)]">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+<div class="text-xl font-bold text-zinc-200 font-headline-lg uppercase tracking-tighter">
+                    GAMICIA
+                </div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-label-caps text-xs tracking-tight text-zinc-500 hover:text-orange-400 transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-label-caps text-xs tracking-tight text-zinc-500 hover:text-orange-400 transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-label-caps text-xs tracking-tight text-zinc-500 hover:text-orange-400 transition-colors opacity-80 hover:opacity-100" href="#">Support</a>
+<a class="font-label-caps text-xs tracking-tight text-zinc-500 hover:text-orange-400 transition-colors opacity-80 hover:opacity-100" href="#">Careers</a>
+</div>
+</div>
+<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-label-caps text-xs tracking-tight text-zinc-500">© 2024 GAMICIA. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-4">
+<div class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></div>
+<span class="font-label-caps text-[10px] text-zinc-600 tracking-widest uppercase">Server Status: Operational</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GAMICIA | High-Fidelity Gaming</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "background": "#131313",
+                      "inverse-surface": "#e5e2e1",
+                      "surface-variant": "#353534",
+                      "tertiary-container": "#929090",
+                      "tertiary": "#c8c6c5",
+                      "inverse-on-surface": "#313030",
+                      "primary": "#ffb59e",
+                      "on-surface": "#e5e2e1",
+                      "surface-container-highest": "#353534",
+                      "on-secondary": "#4e2600",
+                      "primary-fixed": "#ffdbd0",
+                      "tertiary-fixed": "#e5e2e1",
+                      "primary-container": "#ff571a",
+                      "on-primary": "#5e1700",
+                      "on-secondary-fixed": "#2f1500",
+                      "surface": "#131313",
+                      "surface-container": "#201f1f",
+                      "primary-fixed-dim": "#ffb59e",
+                      "on-tertiary-container": "#2a2a2a",
+                      "surface-container-high": "#2a2a2a",
+                      "surface-tint": "#ffb59e",
+                      "on-primary-fixed-variant": "#852400",
+                      "on-secondary-container": "#613100",
+                      "on-tertiary": "#313030",
+                      "surface-dim": "#131313",
+                      "on-error": "#690005",
+                      "on-secondary-fixed-variant": "#6f3900",
+                      "error": "#ffb4ab",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "on-surface-variant": "#e6beb2",
+                      "secondary-fixed-dim": "#ffb77f",
+                      "outline-variant": "#5c4037",
+                      "surface-container-lowest": "#0e0e0e",
+                      "error-container": "#93000a",
+                      "on-primary-fixed": "#3a0b00",
+                      "outline": "#ad897e",
+                      "surface-container-low": "#1c1b1b",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "on-primary-container": "#521300",
+                      "secondary": "#ffb77f",
+                      "secondary-fixed": "#ffdcc4",
+                      "secondary-container": "#ff8a00",
+                      "inverse-primary": "#ae3200",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary-fixed-variant": "#474746",
+                      "on-background": "#e5e2e1",
+                      "surface-bright": "#3a3939"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-page": "64px",
+                      "unit": "8px",
+                      "stack-lg": "64px",
+                      "stack-sm": "16px",
+                      "gutter": "24px",
+                      "stack-md": "32px",
+                      "container-max": "1440px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Space Grotesk"],
+                      "display-xl": ["Space Grotesk"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-md": ["Space Grotesk"],
+                      "label-caps": ["Space Grotesk"]
+              },
+              "fontSize": {
+                      "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "label-caps": ["14px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .glass-rim {
+            border-image: linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(255,255,255,0)) 1;
+        }
+        .hero-glow {
+            background: radial-gradient(circle at center, rgba(255, 77, 0, 0.15) 0%, transparent 70%);
+        }
+        .button-glow:hover {
+            box-shadow: 0 0 20px rgba(255, 77, 0, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container font-body-md overflow-x-hidden">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 border-b border-white/10 bg-zinc-950/60 backdrop-blur-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.8)]">
+<nav class="flex justify-between items-center h-20 px-12 w-full max-w-[1440px] mx-auto">
+<div class="flex items-center gap-12">
+<a class="text-3xl font-black tracking-tighter text-white italic font-headline-lg" href="#">GAMICIA</a>
+<div class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] uppercase tracking-[0.2em] font-bold text-sm">
+<a class="text-[#FF4D00] border-b-2 border-[#FF4D00] pb-1" href="#">Games</a>
+<a class="text-zinc-400 hover:text-white transition-all hover:bg-white/5" href="#">News</a>
+<a class="text-zinc-400 hover:text-white transition-all hover:bg-white/5" href="#">Features</a>
+<a class="text-zinc-400 hover:text-white transition-all hover:bg-white/5" href="#">Shop</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-white hover:text-primary-container transition-colors" data-icon="search">search</button>
+<button class="bg-primary-container text-on-primary-container font-label-caps px-8 py-3 button-glow active:scale-95 transition-all">
+                    BUY NOW
+                </button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="Cinematic wide shot of a lone warrior character walking into a dense foggy forest illuminated by glowing fiery orange mushrooms and misty red atmospheric light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgrol7kFXWJSc-LovMxg6TIpA2U97ILomm_-0_McPqql3tVLwAZrGlczgZ1vihDsALhFHXsIVjpHcjz1OIpzm2OkmyDO3l9ds4FxyLv7E-B0GzZZcXsFlDoSK4Kk8SU6madO5F5c22DuQDLhUwINPTssuj10_q1-iRLNHDrVtNW5qfMp4YXF82xBiZzskw_NyY62Jk3FUtvAc8jNyaYlJbgxbiPK8w2bJ9dyOsdTH6t_O44T0uxotR3lonuRj_viGgOfcSXLwAE3K2"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/40"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background"></div>
+<div class="absolute inset-0 hero-glow"></div>
+</div>
+<div class="relative z-10 text-center px-4 max-w-4xl">
+<p class="font-label-caps text-primary-container mb-6 tracking-[0.4em] uppercase">Prepare for the unknown</p>
+<h1 class="font-display-xl text-white mb-8 leading-none uppercase">SURVIVE AT ALL COSTS</h1>
+<p class="font-body-lg text-tertiary max-w-2xl mx-auto mb-12">One of the most acclaimed RPGs of all time. Enter a realm of fractured light and ancient shadows.</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+<button class="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/20 px-12 py-5 font-label-caps text-white hover:bg-white/20 transition-all active:scale-95">
+                        LEARN MORE
+                    </button>
+<button class="w-full sm:w-auto bg-primary-container px-12 py-5 font-label-caps text-on-primary-container button-glow active:scale-95 transition-all">
+                        PLAY FOR FREE
+                    </button>
+</div>
+</div>
+</section>
+<!-- Featured Games (Bento Grid) -->
+<section class="py-stack-lg container-max mx-auto px-margin-page">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="font-label-caps text-primary uppercase">Trending Projects</span>
+<h2 class="font-headline-lg text-white mt-2">FEATURED GAMES</h2>
+</div>
+<button class="text-zinc-500 font-label-caps flex items-center gap-2 hover:text-white transition-colors">
+                    VIEW ALL <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-[800px]">
+<div class="md:col-span-8 group relative overflow-hidden bg-surface-container border border-white/5">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Futuristic cyberpunk city at night with neon red signage and rainy streets, high-fidelity graphics with cinematic bloom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDWcTuIPmuJU41uzUdH_CImy5sHHsP1hTnkZWHHg7I-dlJHFvZH6lBla1d5cxFZ5_CKolYnrnXE1PulsvUrTx74bG6Q-Rt0FjhcK2wR4XV05_mSzwapaJes3E1UwdCe8YSEbCv_C_mqawh-1NCN2zi0gvLLQXzWLl_tWYJ54eEPZZf7ZBux7iPFxMVzGwdqCHd-rpRAIS5IwTS5wA_Zh2PN78rAlZSwj7o0JqVcGETV637cY6Z10t8UTHKMCi9ARTuPpInnbmQklWO"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-12">
+<span class="bg-primary-container px-3 py-1 text-[10px] font-bold text-on-primary-container uppercase tracking-widest mb-4 inline-block">New Release</span>
+<h3 class="font-headline-md text-white">NEON ASCENT</h3>
+<p class="text-zinc-400 mt-2 max-w-md">Master the verticality of a dying megalopolis in this tactical action-RPG.</p>
+</div>
+<div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-[inset_0_0_100px_rgba(255,77,0,0.2)]"></div>
+</div>
+<div class="md:col-span-4 flex flex-col gap-6">
+<div class="flex-1 group relative overflow-hidden bg-surface-container border border-white/5">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Close up of a highly detailed futuristic helmet reflecting red laser lights in a dark industrial environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzclYkOHc3TNXpAm15Uf3bQ2dD18FFYmV7cgfYpSkX9OKDoBfDz31ZUnEx4_L1f6ObTJmKeHse3md1Y8i5yHBq3CxcYTI4wgnL4l1BdXVw2FT_fFPiC0VUBkcV9_F0RUCremL8rozGcD4AXk5IgCPSlu-Vvh4xOEYkP47jfaBSC96eOur96KGm4DNJsKosQ3_2LOKKvYY-5WKymAhqT6sM5luBkuRf5MflSAQzhk5qr3oBhuzrEXbD3ZG8KQGR2rFCiFCsiPtlymGF"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<h3 class="font-headline-md text-white text-xl">VANGUARD 4</h3>
+</div>
+</div>
+<div class="flex-1 group relative overflow-hidden bg-surface-container border border-white/5">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Abstract deep sea creature with glowing orange bioluminescence in a dark underwater cavern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgY_u_Y3dE12KK9vCpbT-MWI8t3RqMSY80mlVuX5vfssAzom8WNZokowPCzWOY0orYxh3LkVANIILcZwMo8G8OHhro4j--zy_qHawEeYQZ5NYdFGrsQSFzmAfPUcHUwifsljI-JD1JUlXUF-Dotk5V9FnMNr74pSZfU8uoo6vyUiAY5qHOvp2Tyro_lgI4DVmmFZCAMOkFacugN9lM6H4N4Fen3EQEJJZjNqFDOKTpk2CUjS8bo7GlMxUeb-ORFEhR8NhxAggHT-Lw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<h3 class="font-headline-md text-white text-xl">ABYSSAL REACH</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Categories Section -->
+<section class="py-stack-lg bg-surface-container-lowest border-y border-white/5">
+<div class="container-max mx-auto px-margin-page">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12">
+<div class="flex flex-col items-center group cursor-pointer">
+<div class="w-20 h-20 bg-white/5 flex items-center justify-center transition-all group-hover:bg-primary-container group-hover:text-on-primary mb-6 border border-white/10 group-hover:border-transparent">
+<span class="material-symbols-outlined text-4xl" data-icon="swords">swords</span>
+</div>
+<span class="font-label-caps text-zinc-500 group-hover:text-white transition-colors">RPG</span>
+</div>
+<div class="flex flex-col items-center group cursor-pointer">
+<div class="w-20 h-20 bg-white/5 flex items-center justify-center transition-all group-hover:bg-primary-container group-hover:text-on-primary mb-6 border border-white/10 group-hover:border-transparent">
+<span class="material-symbols-outlined text-4xl" data-icon="target">target</span>
+</div>
+<span class="font-label-caps text-zinc-500 group-hover:text-white transition-colors">Action</span>
+</div>
+<div class="flex flex-col items-center group cursor-pointer">
+<div class="w-20 h-20 bg-white/5 flex items-center justify-center transition-all group-hover:bg-primary-container group-hover:text-on-primary mb-6 border border-white/10 group-hover:border-transparent">
+<span class="material-symbols-outlined text-4xl" data-icon="explore">explore</span>
+</div>
+<span class="font-label-caps text-zinc-500 group-hover:text-white transition-colors">Adventure</span>
+</div>
+<div class="flex flex-col items-center group cursor-pointer">
+<div class="w-20 h-20 bg-white/5 flex items-center justify-center transition-all group-hover:bg-primary-container group-hover:text-on-primary mb-6 border border-white/10 group-hover:border-transparent">
+<span class="material-symbols-outlined text-4xl" data-icon="palette">palette</span>
+</div>
+<span class="font-label-caps text-zinc-500 group-hover:text-white transition-colors">Indie</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest News -->
+<section class="py-stack-lg container-max mx-auto px-margin-page">
+<h2 class="font-headline-lg text-white mb-12">LATEST NEWS</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- News Card 1 -->
+<article class="group">
+<div class="relative aspect-video overflow-hidden mb-6 bg-surface-container">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105" data-alt="Cinematic landscape of a dark rocky planet surface under a massive red solar eclipse" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVBAylbcs1yN1BHsDRe6Q0n6FrSaicqXy2Qos2XZXz5fUq3nM1T1dpXdQ1pbC6andN2ojE8ulGMFqrYIn4J1lCqNKIeMAxIiQG4p77Q44Lzw8Gj2X3ttsYhgDwDik2sQr5-Pd_-NT1DCSLpbLgU-552V95kZkf0BGK7__jg36Hq0V1wNFPv8M3gYtIz7QG9rbqMRvrqsMQQw9Q_aoSZMuoyWY000tWczUrlR5DwLm3dhd8rnIej9GGo8eboHOUmuEssbcTxoRgAn_D"/>
+<span class="absolute top-4 left-4 bg-background/80 backdrop-blur-sm px-3 py-1 font-label-caps text-[10px] text-white">MAY 24, 2024</span>
+</div>
+<h3 class="font-headline-md text-white text-2xl group-hover:text-primary-container transition-colors mb-4 uppercase">Update 4.2: Shadows of Titan</h3>
+<p class="text-zinc-500 font-body-md line-clamp-2">The latest major expansion brings new biomes, weapons, and the long-awaited raid on the Titan Forge complex.</p>
+</article>
+<!-- News Card 2 -->
+<article class="group">
+<div class="relative aspect-video overflow-hidden mb-6 bg-surface-container">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105" data-alt="Interior of a high-tech gaming server room with blue and orange ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSLFgN8faOJWwhdVgjufzzNDBgXoyIpzEJNd3gkRDpj247cilhJ4wZTibD8WzWld2UiAhN4PWlhhKboruXCVdY5euNkaMldFTmaEoGqGyplkBBM4cub6ncxmTiZhqlPqIU_BDYj4MIx54Q5IeypDD_5BvLT8Oz4Rbb4bNDhwYd79z9_ChXcrU90_bYJV0oCBt2MLTLhWwpBq2lf_WQXnAsFm1fiaeQMQtX9UvVAM-cZfhr0w3mSWLlJYl-PlBg602tXZEQi4LB3MFs"/>
+<span class="absolute top-4 left-4 bg-background/80 backdrop-blur-sm px-3 py-1 font-label-caps text-[10px] text-white">MAY 20, 2024</span>
+</div>
+<h3 class="font-headline-md text-white text-2xl group-hover:text-primary-container transition-colors mb-4 uppercase">Cross-Play is Now Live</h3>
+<p class="text-zinc-500 font-body-md line-clamp-2">Connect with friends across all platforms. Read our full technical breakdown on the implementation.</p>
+</article>
+<!-- News Card 3 -->
+<article class="group">
+<div class="relative aspect-video overflow-hidden mb-6 bg-surface-container">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105" data-alt="3D render of a futuristic sword made of orange energy and black carbon fiber" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUnDbM6P0GptrLybioWfgGFlTuPmXDzaCuA90QYhnoVHBZav6F1QSIAAhWSw0zpsKIjab3TXbw3Z6X7KUUYEIq5Kjbvfj7S-6GQG8jtllkVOkoEZnd6myl239Ndozfk0zBj31DlucPpD8Kxhf45IgSNpztk6Bv8PuPGzLljaSDa8UeUG0kte057NDfNsSeYUDpvXSkBG74CGEwnILHSflH8cXfIyjL0cl40idv0eqBEWv9txEuhDCyjWjVLrNIjUxxd3bX7cYUnv1d"/>
+<span class="absolute top-4 left-4 bg-background/80 backdrop-blur-sm px-3 py-1 font-label-caps text-[10px] text-white">MAY 15, 2024</span>
+</div>
+<h3 class="font-headline-md text-white text-2xl group-hover:text-primary-container transition-colors mb-4 uppercase">Community Spotlight: Fan Art</h3>
+<p class="text-zinc-500 font-body-md line-clamp-2">Discover the incredible creations from our global community of artists and world-builders.</p>
+</article>
+</div>
+</section>
+<!-- Pre-order CTA -->
+<section class="relative py-32 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="Dramatic silhouette of a group of warriors standing on a cliff edge against a giant burning orange sun and dark clouds" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4MmuswJCdpnj_bAaaiYr_QPB2sMAjk7yyuAO1wckx3wuWP627IH7w3YowE3gRGhdraUnW0BjKNQ-HYT1Tfg_0BH1Xp7yxYsiTSgKLzqJN_1CPzjlY8bdfqONEZYEGxGx58eNsNgpipf4UjiYgC3IV3OSuyGoJArf6TzULXQnBaPzhU6nOg-GgENVNH0B0IPHchuJPjA20cdzegie3_YDFH0DbCzPddrBUnzolC0KK1_fEMdd2o2C3N4fzY7dM5cLL5zP87881GAnX"/>
+<div class="absolute inset-0 bg-background/80 backdrop-blur-[2px]"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background"></div>
+</div>
+<div class="relative z-10 container-max mx-auto px-margin-page text-center">
+<h2 class="font-display-xl text-white mb-6 uppercase">Join the Resistance</h2>
+<p class="font-body-lg text-zinc-300 max-w-xl mx-auto mb-10">Secure your position in the upcoming alpha tests. Exclusive gear and early access rewards await the first 10,000 recruits.</p>
+<button class="bg-primary-container text-on-primary-container font-label-caps px-16 py-6 button-glow active:scale-95 transition-all text-lg">
+                    JOIN NOW
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-black w-full py-16 border-t border-zinc-900">
+<div class="max-w-7xl mx-auto px-8 flex flex-col items-center gap-8">
+<div class="text-xl font-black text-zinc-800 tracking-tighter italic">GAMICIA</div>
+<div class="flex flex-wrap justify-center gap-12 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase">
+<a class="text-zinc-600 hover:text-[#FF4D00] transition-colors" href="#">Privacy Policy</a>
+<a class="text-zinc-600 hover:text-[#FF4D00] transition-colors" href="#">Terms of Service</a>
+<a class="text-zinc-600 hover:text-[#FF4D00] transition-colors" href="#">Support</a>
+<a class="text-zinc-600 hover:text-[#FF4D00] transition-colors" href="#">Careers</a>
+</div>
+<div class="flex gap-6">
+<a class="text-zinc-700 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+<a class="text-zinc-700 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">crossword</span></a>
+<a class="text-zinc-700 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">youtube_activity</span></a>
+</div>
+<p class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-zinc-500 text-center">
+                © 2024 GAMICIA. ENGINEERED FOR HIGH-FIDELITY.
+            </p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #0e0e0e;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(19, 19, 19, 0.6);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .fiery-glow {
+            box-shadow: 0 0 40px -10px rgba(255, 77, 0, 0.4);
+        }
+        .rim-light {
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(255, 77, 0, 0.6);
+        }
+        .vignette-overlay {
+            background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.8) 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#93000a",
+                      "on-primary-fixed": "#3a0b00",
+                      "on-secondary-fixed-variant": "#6f3900",
+                      "tertiary-fixed": "#e5e2e1",
+                      "surface": "#131313",
+                      "tertiary": "#c8c6c5",
+                      "secondary-container": "#ff8a00",
+                      "primary-fixed": "#ffdbd0",
+                      "outline": "#ad897e",
+                      "on-surface": "#e5e2e1",
+                      "inverse-primary": "#ae3200",
+                      "on-primary": "#5e1700",
+                      "primary": "#ffb59e",
+                      "surface-container-highest": "#353534",
+                      "secondary": "#ffb77f",
+                      "secondary-fixed-dim": "#ffb77f",
+                      "on-primary-container": "#521300",
+                      "outline-variant": "#5c4037",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "surface-variant": "#353534",
+                      "surface-container-low": "#1c1b1b",
+                      "primary-fixed-dim": "#ffb59e",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "surface-bright": "#3a3939",
+                      "on-tertiary": "#313030",
+                      "surface-dim": "#131313",
+                      "surface-tint": "#ffb59e",
+                      "background": "#131313",
+                      "inverse-on-surface": "#313030",
+                      "on-error": "#690005",
+                      "on-error-container": "#ffdad6",
+                      "primary-container": "#ff571a",
+                      "on-secondary-fixed": "#2f1500",
+                      "error": "#ffb4ab",
+                      "on-surface-variant": "#e6beb2",
+                      "on-tertiary-fixed-variant": "#474746",
+                      "tertiary-container": "#929090",
+                      "on-secondary": "#4e2600",
+                      "surface-container-high": "#2a2a2a",
+                      "secondary-fixed": "#ffdcc4",
+                      "on-tertiary-container": "#2a2a2a",
+                      "on-secondary-container": "#613100",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-primary-fixed-variant": "#852400",
+                      "on-background": "#e5e2e1",
+                      "inverse-surface": "#e5e2e1",
+                      "surface-container": "#201f1f"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "margin-page": "64px",
+                      "stack-lg": "64px",
+                      "stack-md": "32px",
+                      "container-max": "1440px",
+                      "stack-sm": "16px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Space Grotesk"],
+                      "body-md": ["Inter"],
+                      "label-caps": ["Space Grotesk"],
+                      "headline-lg": ["Space Grotesk"],
+                      "display-xl": ["Space Grotesk"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-caps": ["14px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                      "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background selection:bg-primary-container selection:text-white">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 border-b border-white/10 bg-zinc-950/60 backdrop-blur-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.8)]">
+<div class="flex justify-between items-center h-20 px-12 w-full">
+<div class="text-3xl font-black tracking-tighter text-white italic">GAMICIA</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.2em] font-bold text-sm text-zinc-400 hover:text-white transition-all active:scale-95 transition-transform" href="#">Games</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.2em] font-bold text-sm text-zinc-400 hover:text-white transition-all active:scale-95 transition-transform" href="#">News</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.2em] font-bold text-sm text-zinc-400 hover:text-white transition-all active:scale-95 transition-transform" href="#">Features</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.2em] font-bold text-sm text-zinc-400 hover:text-white transition-all active:scale-95 transition-transform" href="#">Shop</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-[0.2em] font-bold text-sm text-[#FF4D00] border-b-2 border-[#FF4D00] pb-1 active:scale-95 transition-transform" href="#">About</a>
+</nav>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 text-sm">search</span>
+<input class="bg-white/5 border-none text-xs font-label-caps py-2 pl-10 pr-4 focus:ring-1 focus:ring-[#FF4D00] w-48 transition-all" placeholder="SEARCH DATABASE" type="text"/>
+</div>
+<button class="bg-[#FF4D00] text-white font-label-caps px-6 py-2.5 text-xs hover:bg-orange-500 transition-colors active:scale-95 shadow-[0_0_20px_rgba(255,77,0,0.3)]">BUY NOW</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Futuristic studio" class="w-full h-full object-cover opacity-60 scale-105" data-alt="Cinematic wide angle of a futuristic cyberpunk development studio with neon orange holographic displays and dark metallic textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAORDA9M6uubeJdom1OfAhlw0bpG_dmj6gtcvHvjArdljjL-5Ru-ZNBwquFFAM7d4gIWfqwLg6lQNrboFTTfdrzY1CEIKrXi5VBiWc21vG2ZCJpF-rqafwKoj6njbQH5F0z-OtLoEAHO6OuzssXvxC-mrMltImMwMSDzjIZ0QQc-okpUkWp6cN-LB2VGg1Sy81x6LIgpeeGHXTMBDLVfWdonyE3l8W6CTYMFYPPrpkx1EBselxJUTFINNFdqiOnvdrcQPuFtiJm0IJ6"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute inset-0 vignette-overlay"></div>
+</div>
+<div class="relative z-10 text-center px-6 max-w-5xl">
+<div class="inline-block px-3 py-1 mb-6 border border-[#FF4D00]/40 bg-[#FF4D00]/10 font-label-caps text-[10px] tracking-[0.3em] text-[#FF4D00]">ESTABLISHED MMXXIV</div>
+<h1 class="font-display-xl text-display-xl text-white mb-8 leading-none">
+                    ENGINEERING <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-[#FF4D00] to-orange-400 text-glow">IMMERSION</span>
+</h1>
+<p class="font-body-lg text-body-lg text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    At GAMICIA, we don't just build games; we architect digital realities. Our mission is to push the boundaries of high-fidelity entertainment through technical mastery and relentless creative vision.
+                </p>
+<div class="flex gap-4 justify-center">
+<button class="px-8 py-4 bg-white text-black font-label-caps hover:bg-[#FF4D00] hover:text-white transition-all duration-300">EXPLORE PROJECTS</button>
+<button class="px-8 py-4 border border-white/20 bg-white/5 font-label-caps hover:bg-white/10 transition-all duration-300">OUR LEGACY</button>
+</div>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
+<span class="font-label-caps text-[10px] tracking-widest text-zinc-600">SCROLL TO BREACH</span>
+<div class="w-[1px] h-12 bg-gradient-to-b from-[#FF4D00] to-transparent"></div>
+</div>
+</section>
+<!-- Our Mission Section -->
+<section class="py-32 px-12 max-w-7xl mx-auto relative">
+<div class="absolute -left-20 top-0 w-96 h-96 bg-[#FF4D00]/10 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="grid lg:grid-cols-2 gap-20 items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-white mb-8">SURVIVE AT <br/><span class="text-[#FF4D00]">ALL COSTS.</span></h2>
+<div class="space-y-6 font-body-lg text-zinc-400 leading-relaxed">
+<p>
+                            The landscape of gaming is shifting. Where others see limitations, we see a canvas for technical excellence. Our philosophy is rooted in the "High-Fidelity Resistance"—a commitment to uncompromising visual quality and gameplay depth.
+                        </p>
+<p>
+                            We believe that every pixel should tell a story, and every interaction should feel like a bridge to another world. Technical mastery isn't just a goal; it's our baseline requirement.
+                        </p>
+</div>
+</div>
+<div class="glass-panel p-1 rim-light group overflow-hidden">
+<div class="relative overflow-hidden aspect-video">
+<img alt="Mission visual" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Dramatic interior of a high-tech server room with glowing orange liquid cooling tubes and floating digital particles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuJr_N_tLID5gzwtvqAn5e2cf3u74sozvhJ5RdUtvST-YdlNyGzcsmGAIbo9tMAIWL2q2qqnSkO50LSGpPz6tL24Qqt9IqXB8kmURUGcrvDVRvSgQTFWbeY_s8czH9ET7UCXmdn_Ia7jCXW7qKZtQenwvSidDwScbhNIU1hGFL6OITnu7wZFKRCYd869WVF5qlK3CNOanfaQfB1uA_xh8_mR4bTHU2MWET5r2aPtyeXQogrJg8w3pdKpkQw_a5ztSKlA0IQBGfhb52"/>
+<div class="absolute inset-0 bg-[#FF4D00]/10 mix-blend-overlay"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Studio Grid Section -->
+<section class="py-32 bg-zinc-950/50">
+<div class="px-12 mb-16 max-w-7xl mx-auto">
+<div class="flex justify-between items-end">
+<div>
+<span class="font-label-caps text-[#FF4D00] mb-2 block">THE SANCTUM</span>
+<h2 class="font-headline-lg text-headline-lg text-white">WHERE WORLDS ARE BORN</h2>
+</div>
+<div class="hidden md:block font-body-md text-zinc-500 max-w-xs text-right">
+                        Based in the heart of the digital frontier, our studio is designed for collaborative peak performance.
+                    </div>
+</div>
+</div>
+<div class="px-12 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Bento Grid Style -->
+<div class="md:col-span-2 md:row-span-2 glass-panel p-1 rim-light group overflow-hidden h-[600px]">
+<img alt="Development workspace" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern minimalist game development workstation with triple wide-screen monitors showing complex 3D character wireframes and orange code." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDlY2lETkbAjtAyPgIEpvlZMshteu5p1wokImvU4zMlMJp35lpdTL_nhN62wSHkgV7iCas5Q3LuBOCgIJ-Nqcrdg7RsgfPnt7Ah-938NMI9nIUbEq6FX0LVFAKVAPFf55fp6QnzDRohunabNnyEbAPLplSPV7mEHZUbYrJMTb5bB7dPLpCSq2y89I3loifp8e2hzRKUAXPdWgHRkmzjKHZmTYIsbBtA1CoSogvDCIC6BqdZC2ziJ8xb9YO7naVXVO5A-X7lehWHNi8"/>
+</div>
+<div class="glass-panel p-1 rim-light group overflow-hidden h-[290px]">
+<img alt="Concept art" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Sci-fi concept art painting of a colossal obsidian structure in a desert of orange sand under a dark sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd2D5izIxbyw7mxJeb1YQjfu62d64QeyBO20gPHrjFV_rj5zEz-r2-WjUyz11PXPYRzINxzjZdYelDTX127Uv2e2-QetqZKdBIycHZq0R9uJO0x72Me531NgTKoiAmvXjxd74Qc83pe5R8L6eDfyoWHc5-Bmcfc70glpS5lmjudVTrKM6J39H5yH1CHerwIAYfUdYwqlH_IupR4BAK8CV0MYtmpem1YAeleFsIXkohad5QEFB45tmE5mnsqoA5SVz3ttSemO8kCpXV"/>
+</div>
+<div class="glass-panel p-1 rim-light group overflow-hidden h-[290px]">
+<img alt="Motion capture" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Dark motion capture stage with a performer wearing a suit covered in small white tracking markers, glowing orange lights in background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHkV8aM7ZuK16Spw2rLmBSQGapIjAuyRKbm8dhPG6cBcDGpoGrLZXaBQ6vSlLblMH2bIAePk7CxpQuH6C_8jybHwfyaVOtefwYWMdZS2M_7ABXB15ViLkOHiC2MoKV_Iim9MhyvDOSj9TV9ETPKmQu9nkWDrE8GA3KXb9bdY_CjjAbt8WGaSA9CLstjEYBFXRDIwDHdvvTzzBFmTejXLECbUIS7PD7b0eRWd9e9puZMjVKjj_nGqpkKdyn8Qf7g3RzMAwWe48npb2a"/>
+</div>
+</div>
+</section>
+<!-- Core Values Section -->
+<section class="py-32 px-12 max-w-7xl mx-auto">
+<div class="text-center mb-24">
+<h2 class="font-headline-lg text-headline-lg text-white mb-4">OUR SOURCE CODE</h2>
+<div class="w-24 h-1 bg-[#FF4D00] mx-auto shadow-[0_0_10px_rgba(255,77,0,1)]"></div>
+</div>
+<div class="grid md:grid-cols-3 gap-12">
+<!-- Innovation -->
+<div class="flex flex-col items-center text-center">
+<div class="w-20 h-20 mb-8 glass-panel rim-light flex items-center justify-center fiery-glow group cursor-default">
+<span class="material-symbols-outlined text-4xl text-[#FF4D00] group-hover:scale-110 transition-transform">bolt</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Innovation</h3>
+<p class="font-body-md text-zinc-400">We don't follow trends; we define new paradigms in rendering and procedural generation technology.</p>
+</div>
+<!-- Community -->
+<div class="flex flex-col items-center text-center">
+<div class="w-20 h-20 mb-8 glass-panel rim-light flex items-center justify-center fiery-glow group cursor-default">
+<span class="material-symbols-outlined text-4xl text-[#FF4D00] group-hover:scale-110 transition-transform">groups</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Community-First</h3>
+<p class="font-body-md text-zinc-400">Our players are our stakeholders. We build ecosystems that empower creators and foster competitive excellence.</p>
+</div>
+<!-- Technical Mastery -->
+<div class="flex flex-col items-center text-center">
+<div class="w-20 h-20 mb-8 glass-panel rim-light flex items-center justify-center fiery-glow group cursor-default">
+<span class="material-symbols-outlined text-4xl text-[#FF4D00] group-hover:scale-110 transition-transform">terminal</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Technical Mastery</h3>
+<p class="font-body-md text-zinc-400">Engineering is an art form. We obsess over frame timings, data-oriented design, and hardware-level optimization.</p>
+</div>
+</div>
+</section>
+<!-- Team / Join Us Section -->
+<section class="relative py-48 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-[#FF4D00]/5 z-10"></div>
+<img alt="Join the team" class="w-full h-full object-cover opacity-30 grayscale" data-alt="Abstract metallic texture with sharp angles and glowing orange cracks representing energy surging through a dark substance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJmhqFzVbXG0bK-7_Lk-pXSyCBM5H252Xu5u-Ej3DpNYu8pOWA9UrsenHLCqoC6ti0yu2BX6QG-9uX5FDfoiLNupLN_8K-f8E8RN0EQL3JDDRBzXR8nkfYyGgEbm03MRX3Z8vrf2somrL4jQv56E2V-y1ZLv-Q4x8TQyJhbVdQkRs6TkmzkXScYQE-Iq7-oEmZxjccVg5J1uzMOHICbNAOoy4yMGb6Zbrfefp0RRINAsvjpQ3ZknxZZ1chtQXTyNO0Q23cOPbtCYIx"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background"></div>
+</div>
+<div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+<h2 class="font-display-xl text-headline-lg text-white mb-8 tracking-tighter">JOIN THE <span class="italic font-black text-[#FF4D00]">RESISTANCE</span></h2>
+<p class="font-body-lg text-zinc-300 mb-12 max-w-2xl mx-auto">
+                    We are looking for rebels, visionaries, and master engineers. If you want to build the future of high-fidelity gaming, your chair is waiting in the sanctum.
+                </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+<a class="w-full sm:w-auto px-12 py-5 bg-[#FF4D00] text-white font-label-caps text-sm tracking-widest hover:bg-orange-500 transition-all shadow-[0_0_40px_rgba(255,77,0,0.4)] active:scale-95" href="#">VIEW CAREERS</a>
+<a class="w-full sm:w-auto px-12 py-5 border border-white/40 glass-panel font-label-caps text-sm tracking-widest hover:bg-white/10 transition-all active:scale-95" href="#">INTERNSHIP PROGRAM</a>
+</div>
+<div class="mt-20 flex justify-center gap-16">
+<div class="text-center">
+<div class="text-3xl font-headline-md text-white">12</div>
+<div class="font-label-caps text-[10px] text-zinc-500">OPEN ROLES</div>
+</div>
+<div class="text-center">
+<div class="text-3xl font-headline-md text-white">4</div>
+<div class="font-label-caps text-[10px] text-zinc-500">LOCATIONS</div>
+</div>
+<div class="text-center">
+<div class="text-3xl font-headline-md text-white">∞</div>
+<div class="font-label-caps text-[10px] text-zinc-500">POSSIBILITIES</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-black w-full py-16 border-t border-zinc-900 border-t border-zinc-800">
+<div class="max-w-7xl mx-auto px-8 flex flex-col items-center gap-8">
+<div class="text-xl font-black text-zinc-800 tracking-tighter italic">GAMICIA</div>
+<div class="flex gap-10">
+<a class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-zinc-500 hover:text-[#FF4D00] transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-zinc-500 hover:text-[#FF4D00] transition-colors" href="#">Terms of Service</a>
+<a class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-zinc-500 hover:text-[#FF4D00] transition-colors" href="#">Support</a>
+<a class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-zinc-500 hover:text-[#FF4D00] transition-colors" href="#">Careers</a>
+</div>
+<div class="flex gap-6">
+<a class="text-zinc-600 hover:text-[#FF4D00] transition-colors" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+</a>
+<a class="text-zinc-600 hover:text-[#FF4D00] transition-colors" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.669-.072-4.948-.2-4.358-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<a class="text-zinc-600 hover:text-[#FF4D00] transition-colors" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg>
+</a>
+</div>
+<p class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-zinc-500">© 2024 GAMICIA. ENGINEERED FOR HIGH-FIDELITY.</p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-bright": "#3a3939",
+                    "on-primary": "#5e1700",
+                    "tertiary-container": "#929090",
+                    "outline": "#ad897e",
+                    "on-secondary-container": "#613100",
+                    "surface-container-highest": "#353534",
+                    "primary": "#ffb59e",
+                    "on-primary-fixed": "#3a0b00",
+                    "background": "#131313",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container": "#201f1f",
+                    "primary-container": "#ff571a",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "tertiary-fixed": "#e5e2e1",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "on-background": "#e5e2e1",
+                    "secondary-fixed": "#ffdcc4",
+                    "secondary-container": "#ff8a00",
+                    "on-primary-fixed-variant": "#852400",
+                    "secondary-fixed-dim": "#ffb77f",
+                    "surface-container-low": "#1c1b1b",
+                    "on-secondary-fixed": "#2f1500",
+                    "inverse-surface": "#e5e2e1",
+                    "outline-variant": "#5c4037",
+                    "on-primary-container": "#521300",
+                    "surface-tint": "#ffb59e",
+                    "secondary": "#ffb77f",
+                    "surface": "#131313",
+                    "surface-container-high": "#2a2a2a",
+                    "on-secondary": "#4e2600",
+                    "on-tertiary-container": "#2a2a2a",
+                    "primary-fixed-dim": "#ffb59e",
+                    "on-tertiary": "#313030",
+                    "inverse-primary": "#ae3200",
+                    "tertiary": "#c8c6c5",
+                    "surface-dim": "#131313",
+                    "primary-fixed": "#ffdbd0",
+                    "on-secondary-fixed-variant": "#6f3900",
+                    "on-error": "#690005",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-surface-variant": "#e6beb2",
+                    "on-error-container": "#ffdad6",
+                    "error-container": "#93000a",
+                    "on-surface": "#e5e2e1",
+                    "inverse-on-surface": "#313030",
+                    "surface-variant": "#353534"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "margin-page": "64px",
+                    "stack-sm": "16px",
+                    "stack-md": "32px",
+                    "stack-lg": "64px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Space Grotesk"],
+                    "label-caps": ["Space Grotesk"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Space Grotesk"],
+                    "display-xl": ["Space Grotesk"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-caps": ["14px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-rim {
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .fiery-gradient {
+            background: linear-gradient(135deg, #FF4D00 0%, #FF2200 100%);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(255, 77, 0, 0.5);
+        }
+        .hero-vignette {
+            background: radial-gradient(circle, transparent 0%, rgba(0,0,0,0.8) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-white">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 border-b border-white/10 bg-zinc-950/60 backdrop-blur-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.8)]">
+<nav class="flex justify-between items-center h-20 px-12 w-full">
+<div class="text-3xl font-black tracking-tighter text-white italic">GAMICIA</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-label-caps uppercase tracking-[0.2em] font-bold text-sm text-[#FF4D00] border-b-2 border-[#FF4D00] pb-1" href="#">Games</a>
+<a class="font-label-caps uppercase tracking-[0.2em] font-bold text-sm text-zinc-400 hover:text-white transition-all" href="#">News</a>
+<a class="font-label-caps uppercase tracking-[0.2em] font-bold text-sm text-zinc-400 hover:text-white transition-all" href="#">Features</a>
+<a class="font-label-caps uppercase tracking-[0.2em] font-bold text-sm text-zinc-400 hover:text-white transition-all" href="#">Shop</a>
+<a class="font-label-caps uppercase tracking-[0.2em] font-bold text-sm text-zinc-400 hover:text-white transition-all" href="#">About</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-zinc-400 hover:text-[#FF4D00] transition-colors">search</button>
+<button class="fiery-gradient px-8 py-3 font-label-caps text-white active:scale-95 transition-transform hover:shadow-[0_0_20px_rgba(255,77,0,0.4)]">BUY NOW</button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Immersive Hero -->
+<section class="relative h-screen w-full flex items-end pb-32 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Cinematic cyberpunk cityscape with neon signs, glowing skyscrapers, and rain-slicked streets at night" class="w-full h-full object-cover" data-alt="Cinematic high-contrast cyberpunk city at night, rain-slicked streets reflecting neon orange and cyan lights, towering dark skyscrapers with holographic advertisements" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSFKIvsgFQlz_IMIWrZq5e46u64qiPU5WCAjkbbUtcJileLS1UMWYy5Rbfig59LF8sHXChWvKN6eOUMjhaZtfoHLq3KxIDdgeQX4BgD-nMsITOifepliThsMwu83OSyUfkuZR44V30m87BiVFDzutO66yMi2n5-eOPfyviV5gPQYTs7vzaFHc7iApVO2p1xZ61Lodn0lRbam8Jf2MbpMLugFlaxpSBOKjpkxmgvTEvYVUeLoUT3JterED0NiS08GpA_N1Klcb6Yuw4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/40"></div>
+<div class="absolute inset-0 hero-vignette"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+<div class="max-w-2xl">
+<span class="inline-block py-1 px-3 mb-6 bg-[#FF4D00]/20 border border-[#FF4D00]/40 text-[#FF4D00] font-label-caps text-xs">NEW RELEASE</span>
+<h1 class="font-display-xl text-white italic mb-4 leading-none tracking-tighter">NEON ASCENT</h1>
+<div class="flex items-center gap-8 mb-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#FF4D00]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-caps text-white">4.9 RATING</span>
+</div>
+<div class="h-4 w-px bg-white/20"></div>
+<p class="font-headline-md text-white">$59.99</p>
+</div>
+<div class="flex items-center gap-6">
+<button class="fiery-gradient px-12 py-5 font-label-caps text-lg text-white hover:shadow-[0_0_40px_rgba(255,77,0,0.6)] transition-all active:scale-95">BUY NOW</button>
+<button class="flex items-center gap-3 px-8 py-5 border border-white/20 bg-white/5 backdrop-blur-md font-label-caps text-white hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined">play_circle</span> WATCH TRAILER
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Navigation Anchors -->
+<div class="sticky top-20 z-40 bg-zinc-950/80 backdrop-blur-xl border-b border-white/5">
+<div class="max-w-7xl mx-auto px-8 flex gap-12 py-6">
+<a class="font-label-caps text-[#FF4D00]" href="#overview">OVERVIEW</a>
+<a class="font-label-caps text-zinc-500 hover:text-white transition-colors" href="#gallery">GALLERY</a>
+<a class="font-label-caps text-zinc-500 hover:text-white transition-colors" href="#specs">TECHNICAL SPECS</a>
+<a class="font-label-caps text-zinc-500 hover:text-white transition-colors" href="#reviews">REVIEWS</a>
+</div>
+</div>
+<!-- OVERVIEW SECTION -->
+<section class="py-32 relative" id="overview">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+<div class="md:col-span-7">
+<h2 class="font-headline-lg text-white mb-8 italic">SURVIVE THE VERTICAL LABYRINTH</h2>
+<p class="font-body-lg text-zinc-400 mb-8 leading-relaxed">
+                        In the year 2099, the last remnants of humanity reside in Neo-Prime, a singular, massive spire piercing the stratosphere. As a rogue operative known as 'Vex', you must navigate the lethal heights of the Upper Districts to uncover the conspiracy threatening to plunge the city into permanent darkness.
+                    </p>
+<div class="grid grid-cols-2 gap-8 mt-12">
+<div class="p-6 bg-surface-container-low glass-rim relative group overflow-hidden">
+<div class="absolute inset-0 bg-[#FF4D00]/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-[#FF4D00] mb-4 text-4xl">dynamic_form</span>
+<h4 class="font-label-caps text-white mb-2">FLUID COMBAT</h4>
+<p class="text-xs text-zinc-500 font-body-md">Master the gravity-defying movement system and visceral tech-blade combat.</p>
+</div>
+<div class="p-6 bg-surface-container-low glass-rim relative group overflow-hidden">
+<div class="absolute inset-0 bg-[#FF4D00]/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-[#FF4D00] mb-4 text-4xl">visibility</span>
+<h4 class="font-label-caps text-white mb-2">RAY-TRACED WORLD</h4>
+<p class="text-xs text-zinc-500 font-body-md">Experience a breathtaking world powered by Next-Gen Unreal Engine 5 tech.</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 relative">
+<div class="aspect-[4/5] bg-surface-container-high overflow-hidden glass-rim">
+<img alt="Detail of cyberpunk armor with glowing orange accents" class="w-full h-full object-cover" data-alt="Close-up high-fidelity rendering of futuristic combat suit, matte black materials with glowing orange circuit lines and weathered metallic textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI6RKwu7aJn6XovM0YdplTmDhSpl2DIikzAl4Bg8cyXUb19QtVMWnyQC7rU0DEM0jMSuuoq7Svk7B8qwX63dADnmu_51EH4glhYpx9znyvqRBej3TIcFzjCG3hT9DmA4gEsqtyEQlnD2TREqeo8NKUkrSBbXRZIM6eLai4Ri7vSRR_T4aMeAiJtZ0GD3P14oPjbfbVe5jLBHZIHP6O86WuKMsTB9xnXo4Jf46go739I8oQba9L9Rp1EKb_PTozNZcd4yLQrYq8zcO7"/>
+</div>
+<div class="absolute -bottom-8 -left-8 p-8 bg-zinc-950 glass-rim border-l-4 border-l-[#FF4D00]">
+<p class="font-display-xl text-[#FF4D00] leading-none mb-1">98%</p>
+<p class="font-label-caps text-white text-[10px]">CRITICAL ACCLAIM</p>
+</div>
+</div>
+</div>
+</section>
+<!-- GALLERY SECTION -->
+<section class="py-32 bg-surface-container-lowest" id="gallery">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex justify-between items-end mb-16">
+<div>
+<span class="font-label-caps text-[#FF4D00] text-sm">VISUAL FIDELITY</span>
+<h2 class="font-headline-lg text-white italic">GAMEPLAY GALLERY</h2>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 border border-white/10 flex items-center justify-center bg-white/5 hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Bento Gallery Layout -->
+<div class="grid grid-cols-12 gap-6 h-[700px]">
+<div class="col-span-8 h-full bg-surface-container-high relative overflow-hidden group">
+<img alt="Aerial view of city towers" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Wide cinematic shot of the game world, showing multiple tiered city layers with flying vehicles and atmospheric orange haze" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOcQPtCywC2EMTvi63ghXZxRZssoUz7B7ElvPkoy4jBKDJagDAoAs8xlS-v_49y2ThtPX_QvdyApPYURsVDr-wsg6xp8tXEFh1GWUO88deRjBU1WUuzT_QtI96tWU788VcvJ9sdLU2Zcu6NQhM6ILy65UA3O95dQkR_Y5H0gBve5uBqYgrbqWltcXguISKJ1fxox0lt9rt5wJMCESKSOlzgdgbYAtBZBPwX7EHM6invWjrtjAOGzgM38J2l4-3sHpz12JzU-54gIj3"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+<p class="font-label-caps text-white">THE DISTRICT LEVELS</p>
+</div>
+</div>
+<div class="col-span-4 grid grid-rows-2 gap-6 h-full">
+<div class="bg-surface-container-high relative overflow-hidden group">
+<img alt="Cyberpunk street view" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of a neon-drenched alleyway in a cyberpunk city with wet puddles reflecting glowing signs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdWNSO74-HVoREql9zheDxMvztNA0rx_HvUv7s7foWW3YmawNyX0BVj68hQyOInfjLYuU9EzKuNJxa6JhV9vWBL6CfN5r6hA5y2jvmRTAQMZvuQe_JOMPx0TtktxExkuYtCmYNYUi6EdnLDusyHL24RRbOd2HFSrurJiEHgToRrvIrCvNmK9a5-RjNfnZRGrwQRSDKnW6BA-KYKcuBAycavHtHFvRgJjdZs2shzzS9zLiBu_akNazVlyX1p4dZgR6EMABXMfnCEMWm"/>
+</div>
+<div class="bg-surface-container-high relative overflow-hidden group">
+<img alt="Retro tech interface" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Futuristic holographic user interface glowing with data points and orange warning signals over a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdVK1FJWr6AdY36CGpkBL_qj2jJ23ccOZhWt928Z8D1cSGTwAYunzv36mGJbY2x7da5Eqb8kfpv4V4a2vlZppw6MRpXQcJ38zby86l6ZmnOO3qveAWLjoB2wGAytNaHH8vLM0MrJ3xNe6iI-q1hVRRzX6JNNZ2Md1PJss3EbNJE64Kb_Hetl8NJMOvbFWL9d61WpMo8fnEXJee_uPkGO3rHN0ZTSq46A9LuRgvF778zKNmsn0OqRVHkcASQ9C0SbswyUiMnaGb2R3f"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TECHNICAL SPECS -->
+<section class="py-32" id="specs">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col items-center mb-16 text-center">
+<span class="font-label-caps text-[#FF4D00] text-sm">OPTIMIZATION</span>
+<h2 class="font-headline-lg text-white italic">TECHNICAL SPECIFICATIONS</h2>
+<div class="h-1 w-24 bg-[#FF4D00] mt-6"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Minimum -->
+<div class="bg-surface-container-low p-12 glass-rim relative border-t-2 border-t-zinc-800">
+<h3 class="font-headline-md text-white mb-10 italic">MINIMUM</h3>
+<ul class="space-y-6">
+<li class="flex justify-between border-b border-white/5 pb-4">
+<span class="font-label-caps text-zinc-500">OS</span>
+<span class="text-white">Windows 10 64-bit</span>
+</li>
+<li class="flex justify-between border-b border-white/5 pb-4">
+<span class="font-label-caps text-zinc-500">CPU</span>
+<span class="text-white">Intel Core i5-8400 / AMD Ryzen 5 1600</span>
+</li>
+<li class="flex justify-between border-b border-white/5 pb-4">
+<span class="font-label-caps text-zinc-500">MEMORY</span>
+<span class="text-white">12 GB RAM</span>
+</li>
+<li class="flex justify-between border-b border-white/5 pb-4">
+<span class="font-label-caps text-zinc-500">GPU</span>
+<span class="text-white">NVIDIA GTX 1060 6GB / AMD RX 580</span>
+</li>
+<li class="flex justify-between border-b border-white/5 pb-4">
+<span class="font-label-caps text-zinc-500">STORAGE</span>
+<span class="text-white">70 GB SSD Required</span>
+</li>
+</ul>
+</div>
+<!-- Recommended -->
+<div class="bg-surface-container-high p-12 glass-rim relative border-t-2 border-t-[#FF4D00]">
+<div class="absolute -top-4 right-8 bg-[#FF4D00] text-white px-4 py-1 font-label-caps text-[10px]">ULTRA EXPERIENCE</div>
+<h3 class="font-headline-md text-white mb-10 italic">RECOMMENDED</h3>
+<ul class="space-y-6">
+<li class="flex justify-between border-b border-white/5 pb-4">
+<span class="font-label-caps text-zinc-500">OS</span>
+<span class="text-white">Windows 11 64-bit</span>
+</li>
+<li class="flex justify-between border-b border-white/5 pb-4">
+<span class="font-label-caps text-zinc-500">CPU</span>
+<span class="text-white">Intel Core i7-12700K / AMD Ryzen 9 5900X</span>
+</li>
+<li class="flex justify-between border-b border-white/5 pb-4">
+<span class="font-label-caps text-zinc-500">MEMORY</span>
+<span class="text-white">32 GB RAM</span>
+</li>
+<li class="flex justify-between border-b border-white/5 pb-4">
+<span class="font-label-caps text-zinc-500">GPU</span>
+<span class="text-white">NVIDIA RTX 4080 / AMD RX 7900 XTX</span>
+</li>
+<li class="flex justify-between border-b border-white/5 pb-4">
+<span class="font-label-caps text-zinc-500">STORAGE</span>
+<span class="text-white">70 GB NVMe SSD</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 relative overflow-hidden">
+<div class="absolute inset-0 bg-surface-container-high">
+<img alt="Abstract digital network" class="w-full h-full object-cover opacity-30 grayscale" data-alt="Complex orange digital network grid with floating data particles and glowing nodes on a pitch black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOf9cLMmHych2MrA4hao-vFnZALufK6m8l1gcRqkvACwQv8i7CJ64DZiUvFYupQ5fP9mXEZIh2cU5FtjOzkNUK8sMFcFEt6rAEBg0qZaY5U7yFLlM3lgOqWky1jzhk5stP0-imzd6sgYbYyem77o_DaD1iNn4rpblMjuGuwhY01rNEMfXzbvzEaLi4fLmxZLu_XesDrsmCnh46FrrbK5yx13h1I_T3EBcqMVJ_Hlo2MW_7sQ9iMQQqi9jVXguCMdDmryyPaGy3F4IG"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background to-transparent"></div>
+</div>
+<div class="max-w-7xl mx-auto px-8 relative z-10">
+<div class="max-w-xl">
+<h2 class="font-display-xl text-white italic mb-8 leading-none">THE FUTURE IS NOW.</h2>
+<p class="font-body-lg text-zinc-400 mb-12">Purchase the Neon Edition now and receive the 'Obsidian Blade' pack and 48-hour early access.</p>
+<button class="fiery-gradient px-16 py-6 font-label-caps text-xl text-white hover:shadow-[0_0_50px_rgba(255,77,0,0.5)] transition-all active:scale-95">BUY NOW — $59.99</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-black w-full py-16 border-t border-zinc-900">
+<div class="max-w-7xl mx-auto px-8 flex flex-col items-center gap-8">
+<div class="text-xl font-black text-zinc-800 tracking-tighter">GAMICIA</div>
+<div class="flex flex-wrap justify-center gap-10">
+<a class="font-label-caps text-[10px] tracking-widest uppercase text-zinc-600 hover:text-[#FF4D00] transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-caps text-[10px] tracking-widest uppercase text-zinc-600 hover:text-[#FF4D00] transition-colors" href="#">Terms of Service</a>
+<a class="font-label-caps text-[10px] tracking-widest uppercase text-zinc-600 hover:text-[#FF4D00] transition-colors" href="#">Support</a>
+<a class="font-label-caps text-[10px] tracking-widest uppercase text-zinc-600 hover:text-[#FF4D00] transition-colors" href="#">Careers</a>
+</div>
+<div class="flex gap-6 mt-4">
+<a class="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center hover:border-[#FF4D00] hover:text-[#FF4D00] transition-all" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center hover:border-[#FF4D00] hover:text-[#FF4D00] transition-all" href="#">
+<span class="material-symbols-outlined text-sm">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center hover:border-[#FF4D00] hover:text-[#FF4D00] transition-all" href="#">
+<span class="material-symbols-outlined text-sm">chat</span>
+</a>
+</div>
+<p class="font-label-caps text-[10px] tracking-widest uppercase text-zinc-500 mt-8 text-center">
+                © 2024 GAMICIA. ENGINEERED FOR HIGH-FIDELITY.
+            </p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,3 @@
+display_name: Frontend Redesign Tailwind
+short_description: Fresh Tailwind redesigns with safe backend-preserving implementation, motion, generated visuals, and matching content.
+default_prompt: Redesign this website with a fresh premium visual direction using Tailwind CSS, tasteful animation, generated supporting visuals, and matching content while preserving all backend contracts, Blade logic, routes, form fields, CSRF, auth and session behavior, locale and currency behavior, and existing request payloads. Use Exploration Mode for a new look unless I ask for refinement.

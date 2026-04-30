@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GAMICIA | THE ARMORY</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#3a3939",
+                        "on-primary": "#5e1700",
+                        "tertiary-container": "#929090",
+                        "outline": "#ad897e",
+                        "on-secondary-container": "#613100",
+                        "surface-container-highest": "#353534",
+                        "primary": "#ffb59e",
+                        "on-primary-fixed": "#3a0b00",
+                        "background": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container": "#201f1f",
+                        "primary-container": "#ff571a",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "tertiary-fixed": "#e5e2e1",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-background": "#e5e2e1",
+                        "secondary-fixed": "#ffdcc4",
+                        "secondary-container": "#ff8a00",
+                        "on-primary-fixed-variant": "#852400",
+                        "secondary-fixed-dim": "#ffb77f",
+                        "surface-container-low": "#1c1b1b",
+                        "on-secondary-fixed": "#2f1500",
+                        "inverse-surface": "#e5e2e1",
+                        "outline-variant": "#5c4037",
+                        "on-primary-container": "#521300",
+                        "surface-tint": "#ffb59e",
+                        "secondary": "#ffb77f",
+                        "surface": "#131313",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary": "#4e2600",
+                        "on-tertiary-container": "#2a2a2a",
+                        "primary-fixed-dim": "#ffb59e",
+                        "on-tertiary": "#313030",
+                        "inverse-primary": "#ae3200",
+                        "tertiary": "#c8c6c5",
+                        "surface-dim": "#131313",
+                        "primary-fixed": "#ffdbd0",
+                        "on-secondary-fixed-variant": "#6f3900",
+                        "on-error": "#690005",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-surface-variant": "#e6beb2",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "on-surface": "#e5e2e1",
+                        "inverse-on-surface": "#313030",
+                        "surface-variant": "#353534"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0rem",
+                        "lg": "0rem",
+                        "xl": "0rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-page": "64px",
+                        "stack-sm": "16px",
+                        "stack-md": "32px",
+                        "stack-lg": "64px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Space Grotesk"],
+                        "label-caps": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Space Grotesk"],
+                        "display-xl": ["Space Grotesk"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-caps": ["14px", {"lineHeight": "1", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-rim {
+            box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        .atmospheric-glow {
+            background: radial-gradient(circle at center, rgba(255, 77, 0, 0.15) 0%, transparent 70%);
+        }
+        .fiery-gradient {
+            background: linear-gradient(135deg, #FF4D00 0%, #FF2E00 100%);
+        }
+        .vignette-overlay {
+            background: linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.4) 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #ff571a;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 border-b border-white/10 bg-zinc-950/60 backdrop-blur-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.8)] flex justify-between items-center h-20 px-12 w-full">
+<div class="text-3xl font-black tracking-tighter text-white italic">GAMICIA</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-zinc-400 hover:text-white transition-all font-['Space_Grotesk'] uppercase tracking-[0.2em] font-bold text-sm active:scale-95 transition-transform text-[#FF4D00] border-b-2 border-[#FF4D00] pb-1" href="#">Games</a>
+<a class="text-zinc-400 hover:text-white transition-all font-['Space_Grotesk'] uppercase tracking-[0.2em] font-bold text-sm active:scale-95 transition-transform hover:bg-white/5 hover:text-[#FF4D00] transition-colors duration-300" href="#">News</a>
+<a class="text-zinc-400 hover:text-white transition-all font-['Space_Grotesk'] uppercase tracking-[0.2em] font-bold text-sm active:scale-95 transition-transform hover:bg-white/5 hover:text-[#FF4D00] transition-colors duration-300" href="#">Features</a>
+<a class="text-zinc-400 hover:text-white transition-all font-['Space_Grotesk'] uppercase tracking-[0.2em] font-bold text-sm active:scale-95 transition-transform hover:bg-white/5 hover:text-[#FF4D00] transition-colors duration-300" href="#">Shop</a>
+<a class="text-zinc-400 hover:text-white transition-all font-['Space_Grotesk'] uppercase tracking-[0.2em] font-bold text-sm active:scale-95 transition-transform hover:bg-white/5 hover:text-[#FF4D00] transition-colors duration-300" href="#">About</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-zinc-400 cursor-pointer hover:text-primary-container transition-colors">search</span>
+<button class="fiery-gradient text-white font-label-caps px-8 py-3 tracking-widest hover:shadow-[0_0_20px_rgba(255,77,0,0.4)] transition-all active:scale-95">BUY NOW</button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Header -->
+<header class="relative h-[614px] flex items-center justify-center overflow-hidden border-b border-white/5">
+<div class="absolute inset-0 z-0">
+<img alt="Cinematic Hero" class="w-full h-full object-cover opacity-40 grayscale" data-alt="cinematic wide shot of a dark futuristic armory with glowing orange lights and rows of high-tech weaponry and armor in shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABRzGYDcvC2S97p24Z5rFCos6VnF1YebIm8aWWIocobwkoLvrIsk9BSFY_7CyyfI6L8QTbSkV5iOPLqB46u40466b4-tcZIOVCzTCu9G9jkteZjjNEtJBd-T_ZYBhWehBtE-eg4ZK7AfAjzSR_t4ECASXeu-Z7_9955v4w922MVFEsHRJ1Kd_Kkap3UyYZABoslr9ZentfLpn643qDeBf3Nknjq2UPvmLpuB0kk5ZszVZo-F_VpNPBguA0t8Wp8HbP822MWjhHMS0b"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50"></div>
+</div>
+<div class="relative z-10 text-center px-6">
+<p class="text-primary-container font-label-caps mb-4 tracking-[0.5em] animate-pulse">EQUIPMENT PROTOCOL</p>
+<h1 class="font-display-xl text-white uppercase italic tracking-tighter">THE ARMORY</h1>
+<div class="mt-8 flex justify-center gap-4">
+<div class="h-px w-24 bg-primary-container/50 self-center"></div>
+<span class="font-label-caps text-zinc-500">RESOURCES &amp; DEPLOYMENT</span>
+<div class="h-px w-24 bg-primary-container/50 self-center"></div>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 w-full h-32 atmospheric-glow"></div>
+</header>
+<!-- Search and Global Stats -->
+<section class="max-w-7xl mx-auto px-8 -mt-10 relative z-20">
+<div class="bg-zinc-900/80 backdrop-blur-3xl border border-white/10 glass-rim p-6 flex flex-col md:flex-row items-center gap-8 shadow-2xl">
+<div class="flex-1 w-full relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500">search</span>
+<input class="w-full bg-black/50 border-0 border-b-2 border-zinc-800 focus:border-primary-container focus:ring-0 text-white font-label-caps pl-12 py-4 transition-all placeholder:text-zinc-700" placeholder="SEARCH ASSETS..." type="text"/>
+</div>
+<div class="flex gap-12 text-zinc-500">
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] tracking-widest text-zinc-600">ONLINE DEPOT</span>
+<span class="font-headline-md text-white">4,821</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-[10px] tracking-widest text-zinc-600">NEW RELEASES</span>
+<span class="font-headline-md text-primary-container">12</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Catalog Content -->
+<section class="max-w-7xl mx-auto px-8 py-20 flex flex-col md:flex-row gap-12">
+<!-- Filter Sidebar -->
+<aside class="w-full md:w-64 flex-shrink-0 space-y-10">
+<div>
+<h3 class="font-label-caps text-white mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-lg">filter_list</span> CATEGORY
+                    </h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox bg-zinc-900 border-zinc-700 text-primary-container focus:ring-0 rounded-none w-5 h-5" type="checkbox"/>
+<span class="font-label-caps text-zinc-500 group-hover:text-white transition-colors">RPG</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="form-checkbox bg-zinc-900 border-zinc-700 text-primary-container focus:ring-0 rounded-none w-5 h-5" type="checkbox"/>
+<span class="font-label-caps text-white">ACTION</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox bg-zinc-900 border-zinc-700 text-primary-container focus:ring-0 rounded-none w-5 h-5" type="checkbox"/>
+<span class="font-label-caps text-zinc-500 group-hover:text-white transition-colors">ADVENTURE</span>
+</label>
+</div>
+</div>
+<div>
+<h3 class="font-label-caps text-white mb-6">PLATFORM</h3>
+<div class="grid grid-cols-2 gap-2">
+<button class="bg-zinc-900 border border-white/5 py-3 font-label-caps text-[10px] text-zinc-400 hover:border-primary-container/50 transition-colors">PC</button>
+<button class="bg-zinc-900 border border-primary-container py-3 font-label-caps text-[10px] text-white">PS5</button>
+<button class="bg-zinc-900 border border-white/5 py-3 font-label-caps text-[10px] text-zinc-400 hover:border-primary-container/50 transition-colors">XBOX</button>
+<button class="bg-zinc-900 border border-white/5 py-3 font-label-caps text-[10px] text-zinc-400 hover:border-primary-container/50 transition-colors">NSW</button>
+</div>
+</div>
+<div>
+<h3 class="font-label-caps text-white mb-6">PRICE RANGE</h3>
+<input class="w-full h-1 bg-zinc-800 appearance-none cursor-pointer accent-primary-container" type="range"/>
+<div class="flex justify-between mt-4 font-label-caps text-zinc-600 text-[10px]">
+<span>$0</span>
+<span>$200+</span>
+</div>
+</div>
+<div class="pt-6 border-t border-white/5">
+<button class="w-full py-4 border border-zinc-800 text-zinc-500 font-label-caps text-xs hover:bg-white/5 hover:text-white transition-all uppercase tracking-widest">Reset Filters</button>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Card 1 -->
+<div class="group relative aspect-[4/5] bg-zinc-900 border border-white/10 glass-rim overflow-hidden">
+<img alt="Game Artwork" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="high-fidelity cinematic artwork of a cybernetic warrior standing in a rainy neon city with glowing orange visor and detailed armor plates" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsKvOIbwEb2jbjne9e-cD4Z7GE0iRxLtkooOJEOOBPTljnf7x8F4Ro1zvN-MSMyVkW5zdPyxOEUdApQ9I7sHqQ8BaPS6ScQdNgoHpBqr98EXIfftoNDlh4DhS746UjGL8I56tQ4GAaT2ZDTH7Vnq370c1dw37aXK8k8lGb2jslqxmQTnw7h3Qpz5jF8ANfZ03VUW6oOgqOBQRY9G4jpcHFnOVMxpNnw0cCyVd3ftfhbrt8Ozik4Wih4nBnhDz9qlvbdQhxiLKd7XD-"/>
+<div class="absolute inset-0 vignette-overlay opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute top-6 right-6">
+<span class="bg-primary-container text-on-primary-container font-label-caps px-3 py-1 text-[10px] tracking-widest shadow-xl">PRE-ORDER</span>
+</div>
+<div class="absolute inset-x-0 bottom-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 bg-primary-container rounded-full"></span>
+<p class="font-label-caps text-primary-container text-[10px] tracking-[0.2em]">ACTION // SURVIVAL</p>
+</div>
+<h2 class="font-headline-md text-white uppercase italic tracking-tighter mb-4">NEON HARVEST</h2>
+<div class="flex items-end justify-between">
+<div>
+<p class="font-label-caps text-zinc-500 text-[10px] mb-1">CURRENT PRICING</p>
+<p class="font-headline-md text-white">$69.99</p>
+</div>
+<button class="opacity-0 group-hover:opacity-100 bg-white text-black font-label-caps px-6 py-4 tracking-widest transition-all duration-300 hover:bg-primary-container hover:text-white flex items-center gap-2">
+                                VIEW DETAILS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative aspect-[4/5] bg-zinc-900 border border-white/10 glass-rim overflow-hidden">
+<img alt="Game Artwork" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="epic fantasy landscape with floating islands and a giant dragon silhouette against a deep purple and orange sunset sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTC1b8_PgIdM9zEo2iy0s2vt3cTA5elhfiDV_PCRTfIkhsI6qBdd9UBD9NJwQOFF-Qu_HjEcT_o0jl3Cn5tqmmHVnudPYXdrdA5dvsx7XTaIGddLMSz7yvu05vgsv9af6ppEPjLu_rAsktG-YIuX6iwqrJvVEjJffBVq0uNDaDXVyb_J-cirl1EkhjXRSUvquAvBWWdVr5cOfqkYxZBWtKFT5ARtp-OtwQSoXf5BHIwl2vfJGXL9R_y6tONq-5wvZAGNO2RhR2p0Z7"/>
+<div class="absolute inset-0 vignette-overlay opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute top-6 left-6">
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-white/50 text-sm">star</span>
+<span class="material-symbols-outlined text-white/50 text-sm">star</span>
+<span class="material-symbols-outlined text-white/50 text-sm">star</span>
+</div>
+</div>
+<div class="absolute inset-x-0 bottom-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 bg-primary-container rounded-full"></span>
+<p class="font-label-caps text-primary-container text-[10px] tracking-[0.2em]">RPG // ADVENTURE</p>
+</div>
+<h2 class="font-headline-md text-white uppercase italic tracking-tighter mb-4">AETHER BOUND</h2>
+<div class="flex items-end justify-between">
+<div>
+<p class="font-label-caps text-zinc-500 text-[10px] mb-1">CURRENT PRICING</p>
+<p class="font-headline-md text-white">$59.99</p>
+</div>
+<button class="opacity-0 group-hover:opacity-100 bg-white text-black font-label-caps px-6 py-4 tracking-widest transition-all duration-300 hover:bg-primary-container hover:text-white flex items-center gap-2">
+                                VIEW DETAILS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative aspect-[4/5] bg-zinc-900 border border-white/10 glass-rim overflow-hidden">
+<img alt="Game Artwork" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="dark gothic interior of a medieval castle with flickering torchlight and a knight in polished silver armor kneeling before a glowing altar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOg7pZMiV9Zdvg_7xR47idRjvf3wZ1e7IQETh3T020BFjK891pjbqbVxxSvBPc2PbIl9sJ4cgOKP_14-99BzCeHg_gK3DZnEF7ksZ8dCbsWNe749JMZlxi2bZfLF_jAZCUUagG-3P02Ns9sCjVYO25JmenxyASDsDeqC8X_BEMtHem1VH8jIaasTKk7Qon1N8GFeSbSUQCPP7NjFsZ33wsXUwd3mQXvta_CAI4uG4_ELcALqzig_ifiQDPjD5UaYDClc3G3YetuU7m"/>
+<div class="absolute inset-0 vignette-overlay opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute inset-x-0 bottom-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 bg-primary-container rounded-full"></span>
+<p class="font-label-caps text-primary-container text-[10px] tracking-[0.2em]">ACTION // HORROR</p>
+</div>
+<h2 class="font-headline-md text-white uppercase italic tracking-tighter mb-4">CRIMSON KNIGHT</h2>
+<div class="flex items-end justify-between">
+<div>
+<p class="font-label-caps text-zinc-500 text-[10px] mb-1">CURRENT PRICING</p>
+<p class="font-headline-md text-white">$49.99</p>
+</div>
+<button class="opacity-0 group-hover:opacity-100 bg-white text-black font-label-caps px-6 py-4 tracking-widest transition-all duration-300 hover:bg-primary-container hover:text-white flex items-center gap-2">
+                                VIEW DETAILS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group relative aspect-[4/5] bg-zinc-900 border border-white/10 glass-rim overflow-hidden">
+<img alt="Game Artwork" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="futuristic racing car speeding through a tunnel of white and orange light trails with motion blur and high-fidelity reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyAnZMXmzuPeluSaE-2YfNDAQbySvsCsQ-El96m7_HxNNOk2jFE6XUtS_11SbYE1D7ImRcJIZQfzmbpgJrgIsSWX5fXK23Cy7Pgdxq7i1_6tshl9-5oWXxMHqOyfoALJqFCHwsIsOL2ykI8OOI0Rl61Y_skltu2AmXOv1hFLD-eEpPQOvmgIGxTk_oTKQVEKhpGEh8AtRHT-22hh9z-hAObVh9qMlwgC1sYyxzIvcPMuFpf7_50KvfvGVgsl2krnR3k2znZdC9ZX98"/>
+<div class="absolute inset-0 vignette-overlay opacity-80 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute inset-x-0 bottom-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 bg-primary-container rounded-full"></span>
+<p class="font-label-caps text-primary-container text-[10px] tracking-[0.2em]">RACING // ARCADE</p>
+</div>
+<h2 class="font-headline-md text-white uppercase italic tracking-tighter mb-4">VELOCITY X</h2>
+<div class="flex items-end justify-between">
+<div>
+<p class="font-label-caps text-zinc-500 text-[10px] mb-1">CURRENT PRICING</p>
+<p class="font-headline-md text-white">$39.99</p>
+</div>
+<button class="opacity-0 group-hover:opacity-100 bg-white text-black font-label-caps px-6 py-4 tracking-widest transition-all duration-300 hover:bg-primary-container hover:text-white flex items-center gap-2">
+                                VIEW DETAILS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter CTA -->
+<section class="max-w-7xl mx-auto px-8 mb-stack-lg">
+<div class="relative py-20 px-12 border border-primary-container/20 glass-rim overflow-hidden group">
+<div class="absolute inset-0 atmospheric-glow opacity-30 group-hover:opacity-50 transition-opacity"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-lg">
+<h2 class="font-headline-lg text-white mb-4 italic tracking-tighter uppercase">JOIN THE VANGUARD</h2>
+<p class="text-zinc-400 font-body-lg">Get priority access to weapon drops, patch notes, and exclusive equipment releases directly in your terminal.</p>
+</div>
+<div class="flex-1 w-full flex items-center gap-4">
+<input class="flex-1 bg-black/50 border border-zinc-800 py-5 px-6 text-white font-label-caps focus:border-primary-container focus:ring-0 transition-all placeholder:text-zinc-700" placeholder="ENTER TERMINAL ADDRESS" type="email"/>
+<button class="fiery-gradient text-white font-label-caps px-10 py-5 tracking-widest hover:scale-105 transition-transform active:scale-95 shadow-[0_0_30px_rgba(255,77,0,0.3)]">SUBSCRIBE</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-black w-full py-16 border-t border-zinc-900 border-t border-zinc-800">
+<div class="max-w-7xl mx-auto px-8 flex flex-col items-center gap-8">
+<div class="text-xl font-black text-zinc-800 tracking-tighter uppercase">GAMICIA</div>
+<div class="flex flex-wrap justify-center gap-10">
+<a class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-zinc-600 hover:text-[#FF4D00] transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-zinc-600 hover:text-[#FF4D00] transition-colors" href="#">Terms of Service</a>
+<a class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-zinc-600 hover:text-[#FF4D00] transition-colors" href="#">Support</a>
+<a class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-zinc-600 hover:text-[#FF4D00] transition-colors" href="#">Careers</a>
+</div>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-zinc-700 cursor-pointer hover:text-primary-container transition-colors">public</span>
+<span class="material-symbols-outlined text-zinc-700 cursor-pointer hover:text-primary-container transition-colors">hub</span>
+<span class="material-symbols-outlined text-zinc-700 cursor-pointer hover:text-primary-container transition-colors">share</span>
+</div>
+<p class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-zinc-500 mt-4">© 2024 GAMICIA. ENGINEERED FOR HIGH-FIDELITY.</p>
+</div>
+</footer>
+</body></html>
