@@ -36,6 +36,8 @@
                             <a href="{{ route('register.form') }}" class="hud-btn hud-btn-secondary">{{ __('common.join_us_today') }}</a>
                         </div>
 
+                        <p class="system-note">Purchased points can only be used on this website.</p>
+
                         <div class="hero-metric-grid">
                             <div class="hud-stat">
                                 <span class="hud-stat-value">{{ collect($category_lists)->count() }}+</span>
@@ -200,6 +202,7 @@
                         </div>
 
                         <div class="system-note">{{ __('common.stitch_points_note') }}</div>
+                        <p class="system-note">Base service pricing generally starts at 30–40 points, with add-ons available at 20 points per hour.</p>
                         <button class="hud-btn hud-btn-primary w-full" type="submit">{{ __('common.add_cart') }}</button>
                     </form>
                 </div>
