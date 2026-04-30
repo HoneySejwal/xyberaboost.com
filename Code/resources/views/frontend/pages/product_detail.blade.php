@@ -15,6 +15,10 @@
         : $product_detail->extra_description;
     $photo = explode(',', $product_detail->photo);
     $heroImage = $photo[0] ?? $product_detail->photo;
+    $normalizedSlug = \Illuminate\Support\Str::slug($product_detail->slug ?? '');
+    $normalizedTitle = \Illuminate\Support\Str::slug($product_detail->title ?? '');
+    $supportsTrainingAddon = in_array($normalizedSlug, ['gaming-fusion', 'gamingfusion'], true)
+        || in_array($normalizedTitle, ['gaming-fusion', 'gamingfusion'], true);
 @endphp
 
 @section('meta')
@@ -107,6 +111,7 @@
                         </div>
 
                         <div class="mt-8 space-y-6">
+                            @if($supportsTrainingAddon)
                             <label class="storefront-option-toggle">
                                 <input class="mt-1 h-5 w-5 rounded-none border-white/20 bg-transparent text-primary" type="checkbox" id="addon">
                                 <div>
@@ -152,6 +157,21 @@
                                     </button>
                                 </div>
                             </form>
+                            @else
+                            <form action="{{ route('single-add-to-cart') }}" method="POST" class="storefront-order-panel">
+                                @csrf
+                                <input type="hidden" name="quant[1]" value="1" id="quantity">
+                                <input type="hidden" name="slug" value="{{ $product_detail->slug }}">
+                                <input type="hidden" name="hours" value="0">
+                                <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                                    <div>
+                                        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-white/45">{{ __('common.stitch_detail_checkout_label') }}</p>
+                                        <p class="mt-2 text-lg font-semibold text-white">{{ __('common.stitch_detail_checkout_text') }}</p>
+                                    </div>
+                                    <button type="submit" class="btn-primary">{{ __('common.add_to_cart') }}</button>
+                                </div>
+                            </form>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -231,6 +251,7 @@
 
         document.addEventListener('DOMContentLoaded', function () {
             const slider = document.getElementById("product_slider");
+            const addonCheckbox = document.getElementById("addon");
             const tooltip = document.getElementById("sliderTooltip");
             const priceDisplay = document.getElementById("product_price");
             const quantityInput = document.getElementById("product_quantity");
@@ -253,16 +274,18 @@
                 tooltip.style.left = `${thumbOffset}px`;
             }
 
-            if (slider) {
+            if (slider && addonCheckbox) {
                 slider.addEventListener("input", updateTooltip);
                 updateTooltip();
             }
 
             $('.we').hide();
-            $('#addon').change(function () {
+            $(addonCheckbox).change(function () {
                 if ($(this).is(':checked')) {
                     $('.we').slideDown();
                 } else {
+                    slider.value = 0;
+                    updateTooltip();
                     $('.we').slideUp();
                 }
             });

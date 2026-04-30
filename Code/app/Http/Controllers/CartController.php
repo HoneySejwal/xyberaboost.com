@@ -71,8 +71,9 @@ class CartController extends Controller
 
    public function singleAddToCart(Request $request){ 
         $request->validate([
-            'slug'      =>  'required',
-            'quant'      =>  'required',
+            'slug' => 'required',
+            'quant' => 'required',
+            'hours' => 'nullable|integer|min:0|max:10',
         ]);
         // dd($request->quant[1]);
  //return $request;
@@ -95,18 +96,17 @@ class CartController extends Controller
        
        
         //return $product;
-        if($request->hours>0)
-        {
-            $true_price = $product->price+20*$request->hours;
-            $true_price_jp = $product->price+20*$request->hours;
-            $true_price_hk = $product->price+20*$request->hours;
-           
-         }
-        else {
+        $hours = max(0, min(10, (int) $request->input('hours', 0)));
+
+        if ($hours > 0) {
+            $true_price = $product->price + (20 * $hours);
+            $true_price_jp = $product->price_jp + (20 * $hours);
+            $true_price_hk = $product->price_hk + (20 * $hours);
+        } else {
             $true_price = $product->price;
-            $true_price_jp = $product->price;
-            $true_price_hk = $product->price;
-         }
+            $true_price_jp = $product->price_jp;
+            $true_price_hk = $product->price_hk;
+        }
         
         
         if($product->stock <$request->quant[1]){
@@ -161,7 +161,7 @@ else {
             $cart->price_jp = $true_price_jp;
             $cart->price_hk = $true_price_hk;
             $cart->quantity = $request->quant[1];
-            $cart->hours = $request->hours;
+            $cart->hours = $hours;
             $cart->amount = $cart->price * $cart->quantity;
             $cart->amount_jp = $cart->price_jp * $cart->quantity;
             $cart->amount_hk = $cart->price_hk * $cart->quantity;
@@ -175,8 +175,9 @@ else {
     
     public function pointsAddToCart(Request $request){
         $request->validate([
-            'slug'      =>  'required',
-            'quant'      =>  'required',
+            'slug' => 'required',
+            'quant' => 'required',
+            'hours' => 'nullable|integer|min:0|max:10',
         ]);
         // dd($request->quant[1]);
  //return $request;
@@ -421,13 +422,15 @@ public function trainingdelete(Request $request){
                                         
                
         
-       Cart::where('id', $cart->id)->update([
+        $quantity = max(1, (int) $cart->quantity);
+
+        Cart::where('id', $cart->id)->update([
             'price_jp' => $product_detail->price_jp,
             'price' => $product_detail->price,
             'price_hk' => $product_detail->price_hk,
-            'amount' => $product_detail->price,
-            'amount_jp' => $product_detail->price_jp,
-            'amount_hk' => $product_detail->price_hk,
+            'amount' => $product_detail->price * $quantity,
+            'amount_jp' => $product_detail->price_jp * $quantity,
+            'amount_hk' => $product_detail->price_hk * $quantity,
             'hours' => 0,
         ]);
          
