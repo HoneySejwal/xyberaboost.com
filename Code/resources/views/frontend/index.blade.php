@@ -41,6 +41,10 @@
                         <span>{{ __('common.stitch_status_locale') }} {{ app()->getLocale() === 'ja' ? __('common.japanese') : __('common.english') }}</span>
                     </div>
                 </div>
+
+                <div class="cinematic-hero-character-placeholder" aria-hidden="true">
+                    <span>Character / Banner image placeholder</span>
+                </div>
             </div>
         </div>
     </section>
