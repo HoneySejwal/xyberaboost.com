@@ -740,6 +740,141 @@
         @apply relative z-10 grid gap-8;
     }
 
+    .cinematic-hero {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(255, 122, 76, 0.2);
+        min-height: clamp(34rem, 76vh, 44rem);
+        isolation: isolate;
+        background:
+            radial-gradient(circle at 50% 86%, rgba(255, 93, 20, 0.34), transparent 33%),
+            linear-gradient(180deg, #090c13 0%, #0a0d14 38%, #080a10 100%);
+    }
+
+    .cinematic-hero-bg,
+    .cinematic-hero-overlay,
+    .cinematic-hero-grid,
+    .cinematic-hero-ring {
+        position: absolute;
+        inset: 0;
+    }
+
+    .cinematic-hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.38;
+        filter: saturate(0.7) contrast(1.06) brightness(0.36) blur(1px);
+    }
+
+    .cinematic-hero-overlay {
+        background:
+            linear-gradient(180deg, rgba(8, 11, 17, 0.76) 0%, rgba(7, 10, 16, 0.2) 44%, rgba(7, 10, 16, 0.82) 100%),
+            radial-gradient(circle at 50% 64%, rgba(255, 86, 20, 0.36), transparent 36%);
+        z-index: 1;
+    }
+
+    .cinematic-hero-grid {
+        z-index: 2;
+        background-image:
+            linear-gradient(rgba(255, 132, 80, 0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 132, 80, 0.08) 1px, transparent 1px);
+        background-size: 42px 42px;
+        mask-image: linear-gradient(180deg, transparent 0%, black 24%, black 76%, transparent 100%);
+    }
+
+    .cinematic-hero-ring {
+        top: 1.1rem;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        width: clamp(11rem, 26vw, 16rem);
+        height: clamp(2.6rem, 6vw, 3.8rem);
+        transform: translateX(-50%);
+        border-radius: 999px;
+        background: radial-gradient(circle at 50% 45%, rgba(255, 136, 50, 0.8) 0%, rgba(255, 98, 20, 0.6) 44%, rgba(255, 98, 20, 0) 74%);
+        filter: blur(0.4px);
+        box-shadow: 0 0 80px rgba(255, 90, 20, 0.42);
+        z-index: 3;
+    }
+
+    .cinematic-hero-content {
+        position: relative;
+        z-index: 4;
+        min-height: inherit;
+        display: grid;
+        place-content: center;
+        text-align: center;
+        gap: 1rem;
+        padding: clamp(3rem, 6vw, 4.75rem) clamp(1.6rem, 4vw, 3.25rem) clamp(8rem, 16vw, 11rem);
+    }
+
+    .cinematic-overline {
+        color: rgba(255, 179, 153, 0.84);
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+    }
+
+    .cinematic-title {
+        color: #f8f1ed;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(2.2rem, 6vw, 4.8rem);
+        font-weight: 700;
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+        max-width: 12ch;
+        margin: 0 auto;
+        text-shadow: 0 0 44px rgba(255, 132, 75, 0.3);
+    }
+
+    .cinematic-copy {
+        max-width: 70ch;
+        margin: 0 auto;
+        color: rgba(244, 230, 224, 0.84);
+    }
+
+    .cinematic-status-line {
+        @apply flex flex-wrap justify-center gap-3;
+        color: rgba(229, 226, 225, 0.68);
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+    }
+
+    .cinematic-hero-character-placeholder {
+        position: absolute;
+        left: 50%;
+        bottom: 2.1rem;
+        transform: translateX(-50%);
+        width: min(19rem, 58vw);
+        height: min(13rem, 37vh);
+        z-index: 4;
+        border: 1px dashed rgba(255, 164, 129, 0.5);
+        border-radius: 999px 999px 0 0;
+        background:
+            radial-gradient(circle at 50% 70%, rgba(255, 101, 23, 0.34) 0%, rgba(255, 101, 23, 0.1) 50%, transparent 76%),
+            linear-gradient(180deg, rgba(255, 145, 104, 0.14), rgba(255, 145, 104, 0.04));
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: 0.9rem;
+    }
+
+    .cinematic-hero-character-placeholder span {
+        color: rgba(255, 203, 183, 0.88);
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+    }
+
     .hero-layout {
         grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
     }

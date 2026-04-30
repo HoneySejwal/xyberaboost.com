@@ -1,26 +1,27 @@
 {
-    "private": true,
-    "type": "module",
-    "scripts": {
-        "dev": "vite",
-        "build": "vite build",
-        "preview": "vite preview"
-    },
-    "devDependencies": {
-        "@vitejs/plugin-vue2": "^2.3.1",
-        "alpinejs": "^3.14.1",
-        "autoprefixer": "^10.4.20",
-        "axios": "^1.7.9",
-        "laravel-vite-plugin": "^1.2.0",
-        "lodash": "^4.17.21",
-        "postcss": "^8.5.1",
-        "tailwindcss": "^3.4.17",
-        "vite": "^6.0.11",
-        "vue": "^2.7.16",
-        "vue-template-compiler": "^2.7.16"
-    },
-    "dependencies": {
-        "laravel-echo": "^1.8.0",
-        "pusher-js": "^6.0.3"
-    }
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "qa:frontend": "node public/js/frontend-qa-audit.cjs"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue2": "^2.3.1",
+    "alpinejs": "^3.14.1",
+    "autoprefixer": "^10.4.20",
+    "axios": "^1.7.9",
+    "laravel-vite-plugin": "^1.2.0",
+    "lodash": "^4.17.21",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.0.11",
+    "vue": "^2.7.16",
+    "vue-template-compiler": "^2.7.16"
+  },
+  "dependencies": {
+    "laravel-echo": "^1.8.0",
+    "pusher-js": "^6.0.3"
+  }
 }
