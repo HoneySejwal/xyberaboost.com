@@ -20,6 +20,15 @@ class CartController extends Controller
         $this->product=$product;
     }
 
+    private function supportsTrainingAddon(Product $product): bool
+    {
+        $normalizedSlug = Str::slug($product->slug ?? '');
+        $normalizedTitle = Str::slug($product->title ?? '');
+
+        return in_array($normalizedSlug, ['gaming-fusion', 'gamingfusion'], true)
+            || in_array($normalizedTitle, ['gaming-fusion', 'gamingfusion'], true);
+    }
+
     public function addToCart(Request $request){
         // dd($request->all());
         if (empty($request->slug)) {
@@ -97,6 +106,9 @@ class CartController extends Controller
        
         //return $product;
         $hours = max(0, min(10, (int) $request->input('hours', 0)));
+        if (! $this->supportsTrainingAddon($product)) {
+            $hours = 0;
+        }
 
         if ($hours > 0) {
             $true_price = $product->price + (20 * $hours);
@@ -177,7 +189,6 @@ else {
         $request->validate([
             'slug' => 'required',
             'quant' => 'required',
-            'hours' => 'nullable|integer|min:0|max:10',
         ]);
         // dd($request->quant[1]);
  //return $request;
