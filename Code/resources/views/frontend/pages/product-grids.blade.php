@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 
-@section('title', 'EliteLift Gaming || Shop Grid')
-@section('description', 'Browse EliteLift Gaming services with sorting, filtering, and quick access to cart or wishlist.')
+@section('title', 'XyberaBoost || Shop Grid')
+@section('description', 'Browse XyberaBoost services with sorting, filtering, and quick access to cart or wishlist.')
 
 @section('main-content')
     @php

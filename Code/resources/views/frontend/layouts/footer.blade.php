@@ -3,9 +3,9 @@
         <div class="site-footer-grid">
             <div class="site-footer-brand">
                 <div class="brand-lockup brand-lockup-footer">
-                    <img src="{{ asset('images/logo.png') }}" alt="EliteLift Gaming logo" class="brand-mark">
+                    <img src="{{ asset('images/Logo.png') }}" alt="XyberaBoost logo" class="brand-mark">
                     <div>
-                        <p class="brand-name">EliteLift Gaming</p>
+                        <p class="brand-name">XyberaBoost</p>
                         <p class="brand-tagline">{{ __('common.trusted_by_gamers') }}</p>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
         </div>
 
         <div class="site-footer-bottom">
-            <p>&copy; 2026 EliteLift Gaming. All Rights Reserved.</p>
+            <p>&copy; 2026 XyberaBoost. All Rights Reserved.</p>
             <div class="site-footer-bottom-links">
                 <a href="{{ route('pages', 'privacy-policy') }}">{{ __('common.privacy_policy') }}</a>
                 <a href="{{ route('pages', 'terms-conditions') }}">{{ __('common.terms_policy') }}</a>

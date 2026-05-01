@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="index, follow">
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<title>@yield('title', 'EliteLift Gaming | Premium Boosting Services')</title>
-<meta name="description" content="@yield('meta_description', 'EliteLift Gaming offers premium boosting services, points top-ups, and secure account support across live game titles.')">
-<meta name="keywords" content="@yield('meta_keywords', 'EliteLift Gaming, premium game boosting, points purchase, rank boosting, gaming services')">
-<link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
-<meta property="og:title" content="@yield('title', 'EliteLift Gaming | Premium Boosting Services')">
-<meta property="og:description" content="@yield('meta_description', 'EliteLift Gaming offers premium boosting services, points top-ups, and secure account support across live game titles.')">
+<title>@yield('title', 'XyberaBoost | Premium Boosting Services')</title>
+<meta name="description" content="@yield('meta_description', 'XyberaBoost offers premium boosting services, points top-ups, and secure account support across live game titles.')">
+<meta name="keywords" content="@yield('meta_keywords', 'XyberaBoost, premium game boosting, points purchase, rank boosting, gaming services')">
+<link rel="icon" type="image/png" href="{{ asset('images/Logo.png') }}">
+<meta property="og:title" content="@yield('title', 'XyberaBoost | Premium Boosting Services')">
+<meta property="og:description" content="@yield('meta_description', 'XyberaBoost offers premium boosting services, points top-ups, and secure account support across live game titles.')">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ url()->current() }}">
-<meta property="og:image" content="{{ asset('images/logo.png') }}">
-<meta property="og:site_name" content="EliteLift Gaming">
+<meta property="og:image" content="{{ asset('images/Logo.png') }}">
+<meta property="og:site_name" content="XyberaBoost">
 <meta property="og:locale" content="{{ app()->getLocale() === 'ja' ? 'ja_JP' : 'en_US' }}">
 @if(file_exists($viteManifestPath))
     @vite(['resources/css/app.css', 'resources/js/app.js'])

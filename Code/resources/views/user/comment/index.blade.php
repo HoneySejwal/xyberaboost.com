@@ -1,6 +1,6 @@
 @extends('user.layouts.master')
 
-@section('title', 'EliteLift Gaming || Comment Page')
+@section('title', 'XyberaBoost || Comment Page')
 
 @section('main-content')
     <main class="pb-20 pt-6 sm:pt-10">

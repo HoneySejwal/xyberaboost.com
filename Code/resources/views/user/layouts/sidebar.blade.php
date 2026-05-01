@@ -1,9 +1,9 @@
 <aside class="dashboard-sidebar" x-show="sidebarOpen || window.innerWidth > 1100" x-transition>
     <div class="dashboard-sidebar-inner">
         <a class="dashboard-brand" href="{{ route('user') }}">
-            <img src="{{ asset('images/logo.png') }}" alt="EliteLift Gaming">
+            <img src="{{ asset('images/Logo.png') }}" alt="XyberaBoost">
             <div>
-                <div class="dashboard-small-label">ELG</div>
+                <div class="dashboard-small-label">XB</div>
                 <div class="dashboard-brand-title">Player Dashboard</div>
             </div>
         </a>

@@ -59,7 +59,7 @@
                                 <h2 class="mt-3 text-3xl font-black tracking-tight text-on-surface">{{ __('common.auth_register_panel_title') }}</h2>
                             </div>
                             <div class="rounded-full border border-primary/20 bg-primary/10 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
-                                ELG
+                                XB
                             </div>
                         </div>
 

@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title', 'EliteLift Gaming || Blog Detail Page')
+@section('title', 'XyberaBoost || Blog Detail Page')
 
 @section('main-content')
     @php
