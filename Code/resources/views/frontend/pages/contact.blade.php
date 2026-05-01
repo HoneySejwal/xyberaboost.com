@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 
-@section('title', __('common.contact') . ' | EliteLift Gaming')
-@section('meta_description', 'Contact EliteLift Gaming for support, order questions, and service guidance.')
+@section('title', __('common.contact') . ' | XyberaBoost')
+@section('meta_description', 'Contact XyberaBoost for support, order questions, and service guidance.')
 
 @section('main-content')
 @php

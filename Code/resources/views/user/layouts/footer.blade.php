@@ -1,5 +1,5 @@
 <footer class="dashboard-card dashboard-footer">
-    <span>&copy; 2026 EliteLift Gaming. All Rights Reserved.</span>
+    <span>&copy; 2026 XyberaBoost. All Rights Reserved.</span>
 </footer>
 
 <script src="{{ asset('backend/vendor/jquery/jquery.min.js') }}"></script>

@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 
-@section('title', 'About Us | EliteLift Gaming')
-@section('meta_description', 'Learn more about EliteLift Gaming, our secure player-first approach, and the human skill behind our boosting services.')
+@section('title', 'About Us | XyberaBoost')
+@section('meta_description', 'Learn more about XyberaBoost, our secure player-first approach, and the human skill behind our boosting services.')
 
 @section('main-content')
 <main class="pb-20 pt-6 sm:pt-10">
@@ -62,7 +62,7 @@
                     <div class="rounded-[1.8rem] border border-white/10 bg-black/20 p-5">
                         <div class="flex min-h-[260px] items-center justify-center rounded-[1.4rem] border border-white/10 bg-veil-radial p-6 text-center">
                             <div>
-                                <img src="{{ asset('images/logo.png') }}" alt="EliteLift Gaming logo" class="mx-auto h-24 w-auto sm:h-28">
+                                <img src="{{ asset('images/Logo.png') }}" alt="XyberaBoost logo" class="mx-auto h-24 w-auto sm:h-28">
                                 <p class="mt-6 font-headline text-sm uppercase tracking-[0.28em] text-primary">
                                     {{ __('common.about_logo_tagline') }}
                                 </p>

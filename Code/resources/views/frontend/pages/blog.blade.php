@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 
-@section('title', 'EliteLift Gaming || Blog Page')
+@section('title', 'XyberaBoost || Blog Page')
 
 @section('main-content')
     <main class="pb-20 pt-6 sm:pt-10">

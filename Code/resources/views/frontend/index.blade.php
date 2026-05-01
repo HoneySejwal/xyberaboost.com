@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 
-@section('title', 'EliteLift Gaming | Home')
-@section('meta_description', 'Explore premium boosting categories, purchase points, and move faster through a secure EliteLift Gaming storefront.')
+@section('title', 'XyberaBoost | Home')
+@section('meta_description', 'Explore premium boosting categories, purchase points, and move faster through a secure XyberaBoost storefront.')
 
 @section('main-content')
 @php
@@ -58,7 +58,7 @@
                                 <img src="{{ url($heroCategory->photo) }}" alt="{{ $heroCategory->title }}" class="hero-media-image">
                             @else
                                 <div class="hero-media-fallback">
-                                    <span>ELG</span>
+                                    <span>XB</span>
                                 </div>
                             @endif
                             <div class="hero-media-glow"></div>

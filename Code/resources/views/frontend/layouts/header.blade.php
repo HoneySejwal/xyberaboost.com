@@ -13,9 +13,9 @@
         <div class="page-container">
             <div class="header-main-row">
                 <a href="{{ route('home') }}" class="brand-lockup">
-                    <img src="{{ asset('images/logo.png') }}" alt="EliteLift Gaming logo" class="brand-mark">
+                    <img src="{{ asset('images/Logo.png') }}" alt="XyberaBoost logo" class="brand-mark">
                     <div>
-                        <p class="brand-name">EliteLift Gaming</p>
+                        <p class="brand-name">XyberaBoost</p>
                         <p class="brand-tagline">{{ __('common.trusted_by_gamers') }}</p>
                     </div>
                 </a>
@@ -70,7 +70,7 @@
     <div x-show="mobileNavOpen" x-cloak class="fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm" @click="mobileNavOpen = false"></div>
     <div x-show="mobileNavOpen" x-cloak class="mobile-nav-drawer" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full">
         <div class="mobile-nav-head">
-            <img src="{{ asset('images/logo.png') }}" alt="EliteLift Gaming logo" class="h-12 w-auto">
+            <img src="{{ asset('images/Logo.png') }}" alt="XyberaBoost logo" class="h-12 w-auto">
             <button type="button" @click="mobileNavOpen = false" class="header-mobile-toggle">
                 <span class="material-symbols-outlined">close</span>
             </button>
